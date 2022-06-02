@@ -3,11 +3,21 @@ import {Route, Switch, useLocation} from 'react-router-dom';
 
 import MainLayout from './../layout/MainLayout';
 
+const DashboardDefault = lazy(() => import('../views/dashboard'));
 
-const DashboardDefault = lazy(() => import('../views/dashboard/Default'));
+//Master
+const dataPeserta = lazy(() => import('../views/dataPeserta'));
+const dataPenguji = lazy(() => import('../views/dataPenguji'));
 
+const TableBasic2 = lazy(() => import('../views/forms/tables/TableBasic2'));
 const TableBasic = lazy(() => import('../views/forms/tables/TableBasic'));
 const TableDense = lazy(() => import('../views/forms/tables/TableDense'));
+
+// FitnProper
+const pendaftaranFitnProper = lazy(() => import('../views/pendaftaranFitnProper'));
+const pendaftaranWawancara = lazy(() => import('../views/pendaftaranWawancara'));
+const penilaianFitnProper = lazy(() => import('../views/penilaianFitnProper'));
+const penilaianWawancara = lazy(() => import('../views/penilaianWawancara'));
 
 const UtilsTypography = lazy(() => import('../views/utilities/typography'));
 const UtilsColor = lazy(() => import('../views/utilities/color'));
@@ -15,24 +25,17 @@ const UtilsShadow = lazy(() => import('../views/utilities/shadow'));
 const UtilsMaterialIcons = lazy(() => import('../views/utilities/icons/MaterialIcons'));
 const UtilsTablerIcons = lazy(() => import('../views/utilities/icons/TablerIcons'));
 
-// bagian master -----------------------------------
-const dataPeserta = lazy(() => import('../views/dataPeserta'));
-const dataPenguji = lazy(() => import('../views/dataPenguji'));
-
-// bagian fit & proper ---------------------------------
-const pendaftaranFitAndProper = lazy(() => import('../views/pendaftaranFitAndProper'));
-const pendaftaranWawancara = lazy(() => import('../views/pendaftaranWawancara'));
-const penilaianFitAndProper = lazy(() => import('../views/penilaianFitAndProper'));
-const penilaianWawancara = lazy(() => import('../views/penilaianWawancara'));
-
-// bagian report -----------------------------------------------
-const rekapNilaiFitAndProper = lazy(() => import('../views/rekapNilaiFitAndProper'));
-const rekapManualFitAndProper = lazy(() => import('../views/rekapManualFitAndProper'));
-const cetakNilaiFitAndProper = lazy(() => import('../views/cetakNilaiFitAndProper'));
+//Report
+const rekapNilaiFitnProper = lazy(() => import('../views/rekapNilaiFitnProper'));
+const rekapManual = lazy(() => import('../views/rekapManual'));
+const cetakNilaiFitnProper = lazy(() => import('../views/cetakNilaiFitnProper'));
 const rekapNilaiWawancara = lazy(() => import('../views/rekapNilaiWawancara'));
 const cetakNilaiWawancara = lazy(() => import('../views/cetakNilaiWawancara'));
 
+const tambahPeserta = lazy(() => import('../views/tambahPeserta'));
+
 const SamplePage = lazy(() => import('../views/sample-page'));
+
 
 const MainRoutes = () => {
     const location = useLocation();
@@ -40,10 +43,19 @@ const MainRoutes = () => {
     return (
         <Route
             path={[
-                '/dashboard/default',
+                '/dashboard',
 
+                '/tables/tbl-basic2',
                 '/tables/tbl-basic',
                 '/tables/tbl-dense',
+
+                '/dataPeserta',
+                '/dataPenguji',
+
+                '/pendaftaranFitnProper',
+                '/pendaftaranWawancara',
+                '/penilaianFitnProper',
+                '/penilaianWawancara',
 
                 '/utils/util-typography',
                 '/utils/util-color',
@@ -51,29 +63,34 @@ const MainRoutes = () => {
                 '/icons/tabler-icons',
                 '/icons/material-icons',
 
-                '/dataPeserta',
-                '/DataPenguji',
-
-                '/pendaftaranFitAndProper',
-                '/pendaftaranWawancara',
-                '/penilaianFitAndProper',
-                '/penilaianWawancara',
-                
-                '/rekapNilaiFitAndProper',
-                '/rekapManualFitAndProper',
-                '/cetakNilaiFitAndProper',
+                '/rekapNilaiFitnProper',
+                '/rekapManual',
+                '/cetakNilaiFitnProper',
                 '/rekapNilaiWawancara',
                 '/cetakNilaiWawancara',
 
-                '/sample-page'
+                '/tambahPeserta',
+
+                '/sample-page',
             ]}
         >
             <MainLayout showBreadcrumb={true}>
                 <Switch location={location} key={location.pathname}>
-                        <Route path="/dashboard/default" component={DashboardDefault} />
+                        <Route path="/dashboard" component={DashboardDefault} />
 
+                        {/*Master*/}
+                        <Route path="/dataPeserta" component={dataPeserta}/>
+                        <Route path="/dataPenguji" component={dataPenguji}/>
+                        
+                        <Route path="/tables/tbl-basic2" component={TableBasic2} />
                         <Route path="/tables/tbl-basic" component={TableBasic} />
                         <Route path="/tables/tbl-dense" component={TableDense} />
+
+                        {/*FitnProper*/}
+                        <Route path="/pendaftaranFitnProper" component={pendaftaranFitnProper}/>
+                        <Route path="/pendaftaranWawancara" component={pendaftaranWawancara}/>
+                        <Route path="/penilaianFitnProper" component={penilaianFitnProper}/>
+                        <Route path="/penilaianWawancara" component={penilaianWawancara}/>
 
                         <Route path="/utils/util-typography" component={UtilsTypography} />
                         <Route path="/utils/util-color" component={UtilsColor} />
@@ -81,22 +98,14 @@ const MainRoutes = () => {
                         <Route path="/icons/tabler-icons" component={UtilsTablerIcons} />
                         <Route path="/icons/material-icons" component={UtilsMaterialIcons} />
 
-                        {/* data master ni boss ------------------------------------- */}
-                        <Route path="/dataPeserta" component={dataPeserta}/>
-                        <Route path="/dataPenguji" component={dataPenguji}/>
-
-                        {/* data fit and proper ni boss --------------------------------- */}
-                        <Route path="/pendaftaranFitAndProper" component={pendaftaranFitAndProper}/>
-                        <Route path="/pendaftaranWawancara" component={pendaftaranWawancara}/>
-                        <Route path="/penilaianFitAndProper" component={penilaianFitAndProper}/>
-                        <Route path="/penilaianWawancara" component={penilaianWawancara}/>
-
-                        {/* data report ni boss ---------------------------------------------- */}
-                        <Route path="/rekapNilaiFitAndProper" component={rekapNilaiFitAndProper}/>
-                        <Route path="/rekapManualFitAndProper" component={rekapManualFitAndProper}/>
-                        <Route path="/cetakNilaiFitAndProper" component={cetakNilaiFitAndProper}/>
+                        {/*Report*/}
+                        <Route path="/rekapNilaiFitnProper" component={rekapNilaiFitnProper}/>
+                        <Route path="/rekapManual" component={rekapManual}/>
+                        <Route path="/cetakNilaiFitnProper" component={cetakNilaiFitnProper}/>
                         <Route path="/rekapNilaiWawancara" component={rekapNilaiWawancara}/>
                         <Route path="/cetakNilaiWawancara" component={cetakNilaiWawancara}/>
+
+                        <Route path="/tambahPeserta" component={tambahPeserta}/>
 
                         <Route path="/sample-page" component={SamplePage} />
 

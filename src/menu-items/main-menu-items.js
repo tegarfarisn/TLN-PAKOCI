@@ -164,7 +164,7 @@ const menuItems = {
                                     id: 'login3',
                                     title: <FormattedMessage id="Pendaftaran Fit & Proper" />,
                                     type: 'item',
-                                    url: '/pendaftaranFitAndProper',
+                                    url: '/pendaftaranFitnProper',
                                 
                                 },
                                 {

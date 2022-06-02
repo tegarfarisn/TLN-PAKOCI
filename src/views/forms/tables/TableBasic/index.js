@@ -8,18 +8,19 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import logoDefault from "../../../../assets/images/users/userNotFound.png"
+import * as URL from "../../../../api/"
 
 function TableBasic(){
-  const url = "http://192.168.202.8:1337/api/pendaftars?populate[0]=pegawai.jabatan.grade.jenjang&sort[2]=id_pendaftar&populate[1]=pegawai.foto"
   const [posts, setPosts] = useState([])
   const [jenjang, setJenjang] = useState('')
-  const [foto, setFoto] = useState('http://192.168.202.8:1337')
+  const endpointPendaftar = URL.baseURL + "/pendaftars?populate[0]=pegawai.jabatan.grade.jenjang&sort[2]=id_pendaftar&populate[1]=pegawai.foto"
   var nomor = 0;
 
 
   useEffect(() =>{
     if(posts.length === 0){
-      axios.get(url)
+      // axios.get(foto.concat(url))
+      axios.get(endpointPendaftar)
       .then(res => {
         console.log(res)
         setPosts(res.data.data)
@@ -72,7 +73,7 @@ function TableBasic(){
     }
     else if (post.attributes.pegawai.data.attributes.foto.data !== null){
      
-      return foto.concat(post.attributes.pegawai.data.attributes.foto.data.attributes.formats.thumbnail.url)
+      return URL.baseURLFoto + post.attributes.pegawai.data.attributes.foto.data.attributes.formats.thumbnail.url
       
     }
   }

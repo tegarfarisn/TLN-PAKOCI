@@ -1,5 +1,6 @@
 import React from 'react';
 import {makeStyles} from '@material-ui/core/styles';
+import TableBasic2 from '../forms/tables/TableBasic2';
 
 import {Card, CardHeader, Divider, Grid} from '@material-ui/core';
 
@@ -36,19 +37,7 @@ export default function DataPenguji() {
 
     return (
         <React.Fragment>
-            <div>
-                <h1>
-                    tambah data
-                </h1>
-
-                <form method="post">
-                    <label>Nama :</label>
-                    <input type="text" name="nama"/>
-                    <br/>
-                    
-                </form>
-
-            </div>
+            <TableBasic2/>
             
         </React.Fragment>
     );
