@@ -1,7 +1,7 @@
 import React from 'react';
 import {Card, CardContent, CardHeader, Divider, Grid, Typography} from '@material-ui/core';
 
-const PenilaianWawancara = () => {
+const penilaianWawancara = () => {
     return (
         <Grid container>
             <Grid item xs={12}>
@@ -23,4 +23,4 @@ const PenilaianWawancara = () => {
     );
 };
 
-export default PenilaianWawancara;
+export default penilaianWawancara;

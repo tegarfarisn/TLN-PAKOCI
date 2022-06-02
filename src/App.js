@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
-import { IntlProvider } from 'react-intl';
-import { jssPreset, StylesProvider, ThemeProvider } from '@material-ui/core/styles';
+import React, {useEffect, useState} from 'react';
+import {useSelector} from 'react-redux';
+import {IntlProvider} from 'react-intl';
+import {jssPreset, StylesProvider, ThemeProvider} from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import StyledEngineProvider from '@material-ui/core/StyledEngineProvider';
 
@@ -12,13 +12,11 @@ import Snackbar from './ui-component/extended/Snackbar';
 import NavigationScroll from './layout/NavigationScroll';
 
 import rtlPlugin from 'stylis-plugin-rtl';
-import { CacheProvider } from '@emotion/react';
+import {CacheProvider} from '@emotion/react';
 import createCache from '@emotion/cache';
 
-import { create } from 'jss';
+import {create} from 'jss';
 import rtl from 'jss-rtl';
-
-// import { FirebaseProvider } from "../contexts/FirebaseContext";
 
 const jss = create({
     plugins: [...jssPreset().plugins, rtl()]
@@ -59,11 +57,9 @@ const App = () => {
                             <StyledEngineProvider injectFirst>
                                 <NavigationScroll>
                                     <ThemeProvider theme={theme(customization)}>
-                                        {/* <FirebaseProvider> */}
-                                            <CssBaseline />
+                                        <CssBaseline />
                                             <Routes />
                                             <Snackbar />
-                                        {/* </FirebaseProvider> */}
                                     </ThemeProvider>
                                 </NavigationScroll>
                             </StyledEngineProvider>

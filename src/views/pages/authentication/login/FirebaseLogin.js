@@ -113,9 +113,9 @@ const FirebaseLogin = (props, {className, ...rest}) => {
     const [showPassword, setShowPassword] = React.useState(false);
     const [checked, setChecked] = React.useState(true);
 
-    // const googleHandler = async () => {
+    const googleHandler = async () => {
 
-    // };
+    };
 
     const handleClickShowPassword = () => {
         setShowPassword(!showPassword);
@@ -127,7 +127,7 @@ const FirebaseLogin = (props, {className, ...rest}) => {
 
     return (
         <React.Fragment>
-            {/* <Grid container direction="column" justifyContent="center" spacing={2}>
+            <Grid container direction="column" justifyContent="center" spacing={2}>
                 <Grid item xs={12}>
                     <Button
                         disableElevation
@@ -162,7 +162,7 @@ const FirebaseLogin = (props, {className, ...rest}) => {
                         </Typography>
                     </Box>
                 </Grid>
-            </Grid> */}
+            </Grid>
 
             <Formik
                 initialValues={{
@@ -298,11 +298,9 @@ const FirebaseLogin = (props, {className, ...rest}) => {
                                 type="submit"
                                 variant="contained"
                                 className={classes.login}
-                                
                             >
-                               LOGIN {/* <Link mt={2} fullwidth to ="/dashboard/default" style={{color:"white"}}> LOGIN</Link> */}
+                                Sign in
                             </Button>
-                            
                         </Box>
                     </form>
                 )}

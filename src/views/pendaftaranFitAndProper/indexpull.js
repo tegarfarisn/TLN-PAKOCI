@@ -1,101 +1,56 @@
-import * as React from 'react';
+import React from 'react';
 import axios from 'axios';
 import {useState, useEffect} from 'react';
 import {Card, CardContent, CardHeader, Divider, Grid, Typography, Button, TextField, Select, MenuItem, FormControl, Box, InputLabel} from '@material-ui/core';
 import {gridSpacing} from '../../store/constant';
 import { ReplyOutlined } from '@material-ui/icons';
-
-const PendaftaranFitnProper = () => {
-    // const [Jenjang, setJenjang] = useState('');
-    const [file, setFile] = useState('');
-    const [Nip, setNip] = useState('')
-
-    const handleChange= (event) => {
-        setJenjang(event.target.value);
-    } ;
-
-    const handleChangee= (event) => {
-        setFile(event.target.value);
-    } ;
-    
-
-    const url= ""
-    const [pendaftar, setPendaftar] = useState({
-        data : {
-          urjab :"",
-          Jenis_FitnProper : "",
-          date : "",
-          proyeksi_jabatan : "",
-          jenjang_jabatan : "",
-          file_cv: "",
-          file_ppt: "",
-          pesertas: "",
-      }
-      })
-
-      const urlJenjang = "http://10.50.164.137:1337/api/pendaftars?populate[0]=pegawai.jabatan&populate[1]=pegawai.grade&populate[2]=pegawai.jenjang"
-      const [posts, setPosts] = useState([])
-      const [Jenjang, setJenjang] = useState([])
-    
-      useEffect(() =>{
-        axios.get(urlJenjang)
-            .then(res => {
-              console.log(res)
-              setJenjang(res.data.data)
-            })
-            .catch(err => {
-              console.log(err)
-            })
-    }, [Jenjang])
-
-      const handleSubmit = (e) => {
-    
-        e.preventDefault();
-
-        console.log(`Form submitted, ${pendaftar}`);    
-
-    }
-
-    //   useEffect(() => {
-    //     // POST request using axios inside useEffect React hook
-    //     const article = { title: 'React Hooks POST Request Example' };
-    //     axios.post('http://10.50.164.137:1337/api/pengujis/', article)
-    //         .then(response => setPendaftar(response.data.id));
-    
-    // }, []);
-
-    // useEffect(() =>{
-    //     const idpengujis = {
-    //         id_penguji: this.state.idpenguji
-    //     }
-    //     axios.post('http://affc-103-100-128-52.ngrok.io/api/pengujis?sort[0]=id_penguji', idpengujis)
-
-    // });
-
-    function submit(e) {
-        const idx = setPendaftar.findIndex(object => {
-          return Nip === document.getElementById("Nip").value})
-        e.preventDefault();
-        axios.post(url,{
-          data : {
-            urjab :document.getElementById("urjab").value,
-            Jenis_FitnProper : document.getElementById("fp").value,
-            date : document.getElementById("date").value,
-            proyeksi_jabatan : document.getElementById("proyeksi").value,
-            jenjang_jabatan : document.getElementById("jenjab").value,
-            file_cv: "",
-            file_ppt: "",
-            pesertas: pendaftar[idx].id,
+ 
+class PendaftaranFitnProper extends React.Component {
+  state = {
+    data: {
+      atributes:{
+        id_penguji: "",
+        pegawai:{
+            data:{
+              id: ""
+            }
         }
-        })
-        .then(res=>{
-          console.log(res.data)
-        })
-        document.location.reload(true)
       }
+      
+    }
+  }
+ 
+  handleChange = event => {
+    this.setState({ 
+      id_penguji: event.target.value,
+      id: event.target.value
+    
+    });
+  }
 
+  componentDidMount = () => {
+    console.log(this.state.id_penguji)
+  }
+ 
+  handleSubmit = event => {
+    event.preventDefault();
+ 
+    const data = {
+      id_penguji: this.state.id_penguji,
+      pegawai: this.state.id
+
+    };
+ 
+    axios.get(`http://192.168.130.8:1337/api/pegawais`, { data })
+      .then(res => {
+        console.log(res);
+        console.log(res.data);
+      })
+  }
+ 
+  render() {
     return (
-        <Grid container>
+<Grid container>
             <Grid item xs={12}>
                 <Button href= "../dashboard"  variant="contained" startIcon={<ReplyOutlined/>}  >
                     Kembali
@@ -103,7 +58,8 @@ const PendaftaranFitnProper = () => {
                 <Card>
                     {/* <Divider /> */}
                     <CardHeader title={<Typography variant="h5">Input / Updating Pendaftaran Fit & Proper </Typography>} />
-                    <Grid container spacing={1} paddingBottom={3}>
+                        <form onSubmit={this.handleSubmit}>
+                        <Grid container spacing={1} paddingBottom={3}>
                         <Grid item xs={2} md ={2.2}>
                             <Typography variant = "h5" paddingLeft={3}  display='center' >
                             NIP
@@ -115,11 +71,13 @@ const PendaftaranFitnProper = () => {
                             type="NIP"
                             autoComplete="current-password"/>
                         <Grid item xs={2} md ={2.2}>
-                            <Button variant="contained" md={1} type="submit" >
+                            <Button variant="contained" md={1} type="submit" onSubmit={this.handleSubmit} >
                             CEK
                             </Button>
                         </Grid>
                     </Grid>
+                        </form>
+                    
                     <Grid container spacing={1} paddingBottom={3}>
                         <Grid item xs={2} md ={2.2}>
                             <Typography variant = "h5" paddingLeft={3}  display='center' >
@@ -187,10 +145,9 @@ const PendaftaranFitnProper = () => {
                             label="jenjang"
                             onChange={handleChange}
                             >
-                            <option disabled selected>--Pilih Proyeksi Jabatan--</option>
-                            {Jenjang.map((post) => ( 
-                            <option value="jenjang">{post.attributes.nama_jabatan}</option>
-                            ))}
+                            <MenuItem value={10}>Manager Atas</MenuItem>
+                            <MenuItem value={20}>Manager Menengah</MenuItem>
+                            <MenuItem value={30}>Manager Dasar</MenuItem>
                             </Select>
                         </FormControl>
                         </Grid>
@@ -249,7 +206,7 @@ const PendaftaranFitnProper = () => {
                             </Typography> 
                         </Grid>
                         <FormControl>
-                            <InputLabel type="file" onChange={handleChange}/>
+                            <InputLabel type="file" onChange={handleChangee}/>
                             <Button variant="contained" md={1} type="submit">Upload</Button>
                         </FormControl>
                     </Grid>
@@ -321,10 +278,20 @@ const PendaftaranFitnProper = () => {
                         </FormControl> 
                         </Grid>
                     </Grid>
+                    
+                    
+
+      
+                    <CardContent>
+                    
+                    </CardContent>
                 </Card>
             </Grid>
         </Grid>
-    );
-};
-
+    )
+  }
+}
+ 
 export default PendaftaranFitnProper;
+
+// export default PendaftaranFitnProper;
