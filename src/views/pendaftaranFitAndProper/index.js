@@ -32,7 +32,7 @@ const PendaftaranFitnProper = () => {
       jenis_fit_n_proper: pendaftar.jenis_fit_n_proper,
       jabatan: pendaftar.id_proyeksi_jabatan
     }
-    axios.post(`http://192.168.202.8:1337/api/pendaftars`,{data})
+    axios.post(`http://localhost:1337/api/pendaftars`,{data})
     .then((res)=>{
       console.log("post berhasil",res.data.data);
     })
@@ -40,7 +40,7 @@ const PendaftaranFitnProper = () => {
 
   const getPegawai = () => {
     console.log("get pegawai");
-    axios.get(`http://192.168.202.8:1337/api/pegawais?filters[nip][$eq]=${Nip}&populate=*`)
+    axios.get(`http://localhost:1337/api/pegawais?filters[nip][$eq]=${Nip}&populate=jabatan`)
       .then((res) => {
         console.log("ini pegawai", res.data.data);
         setPendaftar({ ...pendaftar, 
@@ -54,7 +54,7 @@ const PendaftaranFitnProper = () => {
   }
 
   const getJabatan = () => {
-    axios.get(`http://192.168.202.8:1337/api/jabatans`)
+    axios.get(`http://localhost:1337/api/jabatans`)
     .then((res) => {
       console.log("Ini jabatan", res.data.data)
       setJabatan(res.data.data)
@@ -66,12 +66,12 @@ const PendaftaranFitnProper = () => {
 
   const getJenjang = () => {
     setPendaftar({...pendaftar,id_proyeksi_jabatan:proyeksi})
-    axios.get(`http://192.168.202.8:1337/api/jabatans/${proyeksi}?populate=jenjang`)
+    axios.get(`http://localhost:1337/api/jabatans/${proyeksi}?populate=grade.jenjang`)
     .then((res) => {
       console.log("Ini jenjang nya", res.data.data)
       setPendaftar({
         ...pendaftar,
-        id_jenjang_proyeksi_jabatan: res.data.data.attributes.jenjang.data.attributes.jenjang_jabatan_struktural,
+        id_jenjang_proyeksi_jabatan: res.data.data.attributes.grade.data.attributes.jenjang.data.attributes.jenjang_jabatan_struktural,
       })
     })
     .catch(err => {
@@ -81,7 +81,7 @@ const PendaftaranFitnProper = () => {
   }
 
   const getPenguji = () => {
-    axios.get(`http://192.168.202.8:1337/api/pengujis?populate=pegawai`)
+    axios.get(`http://localhost:1337/api/pengujis?populate=pegawai`)
     .then((res) => {
       console.log("Ini Penguji", res.data.data)
       // setPendaftar
