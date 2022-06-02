@@ -32,7 +32,7 @@ const PendaftaranFitnProper = () => {
       jenis_fit_n_proper: pendaftar.jenis_fit_n_proper,
       jabatan: pendaftar.id_proyeksi_jabatan
     }
-    axios.post(`http://localhost:1337/api/pendaftars`,{data})
+    axios.post(`http://192.168.202.8:1337/api/pendaftars`,{data})
     .then((res)=>{
       console.log("post berhasil",res.data.data);
     })
@@ -40,7 +40,7 @@ const PendaftaranFitnProper = () => {
 
   const getPegawai = () => {
     console.log("get pegawai");
-    axios.get(`http://localhost:1337/api/pegawais?filters[nip][$eq]=${Nip}&populate=jabatan`)
+    axios.get(`http://192.168.202.8:1337/api/pegawais?filters[nip][$eq]=${Nip}&populate=jabatan`)
       .then((res) => {
         console.log("ini pegawai", res.data.data);
         setPendaftar({ ...pendaftar, 
@@ -54,7 +54,7 @@ const PendaftaranFitnProper = () => {
   }
 
   const getJabatan = () => {
-    axios.get(`http://localhost:1337/api/jabatans`)
+    axios.get(`http://192.168.202.8:1337/api/jabatans`)
     .then((res) => {
       console.log("Ini jabatan", res.data.data)
       setJabatan(res.data.data)
@@ -66,7 +66,7 @@ const PendaftaranFitnProper = () => {
 
   const getJenjang = () => {
     setPendaftar({...pendaftar,id_proyeksi_jabatan:proyeksi})
-    axios.get(`http://localhost:1337/api/jabatans/${proyeksi}?populate=grade.jenjang`)
+    axios.get(`http://192.168.202.8:1337/api/jabatans/${proyeksi}?populate=grade.jenjang`)
     .then((res) => {
       console.log("Ini jenjang nya", res.data.data)
       setPendaftar({
@@ -81,7 +81,7 @@ const PendaftaranFitnProper = () => {
   }
 
   const getPenguji = () => {
-    axios.get(`http://localhost:1337/api/pengujis?populate=pegawai`)
+    axios.get(`http://192.168.202.8:1337/api/pengujis?populate=pegawai`)
     .then((res) => {
       console.log("Ini Penguji", res.data.data)
       // setPendaftar
@@ -311,11 +311,19 @@ const PendaftaranFitnProper = () => {
                 Penguji 2
               </Typography>
             </Grid>
-            <TextField
-              id="outlined-password-input"
-              label="Penguji 2"
-              type="Penguji 2"
-              autoComplete="current-password" />
+            <Select
+                  labelId="Penguji 2"
+                  id="Penguji 2"
+                  
+                  label="Penguji 2"
+                  
+                  onChange={(e)=>setPendaftar({...pendaftar, id_penguji: e.target.value})}
+                  value={penguji}
+                  >
+                  {penguji.map(daftarpenguji =>
+                    <MenuItem value={daftarpenguji.id}>{daftarpenguji.attributes.pegawai.data.attributes.nama}</MenuItem>
+                  )}
+                </Select>
           </Grid>
           <Grid container spacing={1} paddingBottom={3}>
             <Grid item xs={2} md={2.2}>
