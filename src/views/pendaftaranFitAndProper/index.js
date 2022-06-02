@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 import {Card, CardContent, CardHeader, Divider, Grid, Typography, Button, TextField, Select, MenuItem, FormControl, Box, InputLabel} from '@material-ui/core';
 import {gridSpacing} from '../../store/constant';
 import { ReplyOutlined } from '@material-ui/icons';
@@ -15,19 +15,6 @@ const PendaftaranFitnProper = () => {
     const handleChangee= (event) => {
         setFile(event.target.value);
     } ;
-    const [pendaftar, setPendaftar] = useState({
-        data : {
-            
-        //   urjab :"",
-        //   Jenis_FitnProper : "",
-        //   date : "",
-        //   proyeksi_jabatan : "",
-        //   jenjang_jabatan : "",
-        //   file_cv: "",
-        //   file_ppt: "",
-        //   pesertas: "",
-      }
-      })
 
     return (
         <Grid container>

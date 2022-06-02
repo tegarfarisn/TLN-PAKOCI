@@ -1,22 +1,21 @@
 import React from 'react';
 import {Card, CardContent, CardHeader, Divider, Grid, Typography} from '@material-ui/core';
+import TableBasic2 from '../forms/tables/TableBasic2';
+  import { Link } from 'react-router-dom'
 
 const dataPenguji = () => {
+  console.log('Clicked');
     return (
         <Grid container>
             <Grid item xs={12}>
+                  <Link to={'/tambahpenguji'}>
+                  <div>
+                        <button onClick={ dataPenguji}>Tambah Penguji</button>
+                    </div><br></br>
+                  </Link>
                 <Card>
-                    <CardHeader title={<Typography variant="h5">Sample Card</Typography>} />
                     <Divider />
-                    <CardContent>
-                        <Typography variant="body2">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                            laborum.
-                        </Typography>
-                    </CardContent>
+                    <TableBasic2/>
                 </Card>
             </Grid>
         </Grid>

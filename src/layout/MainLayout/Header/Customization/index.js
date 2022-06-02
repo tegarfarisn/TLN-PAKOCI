@@ -16,7 +16,7 @@ import {
     useTheme
 } from '@material-ui/core';
 
-import SettingsSuggestIcon from '@material-ui/icons/SettingsSuggest';
+//import SettingsSuggestIcon from '@material-ui/icons/SettingsSuggest';
 
 import SubCard from '../../../../ui-component/cards/SubCard';
 import {gridSpacing} from '../../../../store/constant';
@@ -137,7 +137,7 @@ const Customization = () => {
                         onClick={handleToggle}
                         sx={{boxShadow: '0 3px 10px 0 rgb(33 150 243)', ':hover': {boxShadow: '0 6px 15px 0 rgb(33 150 243)'}}}
                     >
-                        <SettingsSuggestIcon />
+                        {/* <SettingsSuggestIcon /> */}
                     </Avatar>
                 </Fab>
             </Tooltip>

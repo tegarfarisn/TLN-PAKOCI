@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const FitNProper = (props) => {
+const TablerIcons = (props) => {
     const classes = useStyles();
 
     return (
@@ -20,12 +20,12 @@ const FitNProper = (props) => {
             <Grid container spacing={gridSpacing}>
                 <Grid item xs={12}>
                     <Card>
-                        <CardHeader title="Welcome To Fit & Proper" />
+                        <CardHeader title="Tabler Icons" />
                         <Divider />
                         <CardContent>
-                            {/* <Card sx={{overflow: 'hidden'}}>
+                            <Card sx={{overflow: 'hidden'}}>
                                 <iframe title="Tabler Icons" className={classes.frame} width="100%" src="https://tablericons.com/" />
-                            </Card> */}
+                            </Card>
                         </CardContent>
                     </Card>
                 </Grid>
@@ -34,4 +34,4 @@ const FitNProper = (props) => {
     );
 };
 
-export default FitNProper;
+export default TablerIcons;

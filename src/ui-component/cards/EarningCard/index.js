@@ -1,5 +1,6 @@
 import React from 'react';
-import {Avatar, Card, CardContent, Grid, makeStyles, Menu, MenuItem, Typography} from '@material-ui/core';
+import axios from 'axios';
+import { Avatar, Card, CardContent, Grid, makeStyles, Menu, MenuItem, Typography } from '@material-ui/core';
 
 import EarningIcon from './../../../assets/images/icons/earning.svg';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
@@ -9,6 +10,7 @@ import GetAppTwoToneIcon from '@material-ui/icons/GetAppOutlined';
 import FileCopyTwoToneIcon from '@material-ui/icons/FileCopyOutlined';
 import PictureAsPdfTwoToneIcon from '@material-ui/icons/PictureAsPdfOutlined';
 import ArchiveTwoToneIcon from '@material-ui/icons/ArchiveOutlined';
+import { ConstructionOutlined } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme) => ({
     card: {
@@ -89,7 +91,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const EarningCard = () => {
+const EarningCard = (employees) => {
     const classes = useStyles();
 
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -158,7 +160,9 @@ const EarningCard = () => {
                     <Grid item>
                         <Grid container alignItems="center">
                             <Grid item>
-                                <Typography className={classes.cardHeading}>$500.00</Typography>
+                                <Typography className={classes.cardHeading}>
+                                    50000000
+                                </Typography>
                             </Grid>
                             <Grid item>
                                 <Avatar className={classes.avatarCricle}>
@@ -174,6 +178,19 @@ const EarningCard = () => {
             </CardContent>
         </Card>
     );
+};
+
+EarningCard.getInitialProps = async (ctx) => {
+    try {
+        const res = await axios.get('http://localhost:1337/api/earning-monthlies');
+        const employees = res.data.data;
+        console.log(employees);
+        return {
+            employees
+        };
+    } catch (error) {
+        return { error };
+    }
 };
 
 export default EarningCard;
