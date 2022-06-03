@@ -3,12 +3,13 @@ import {Route, Switch, useLocation} from 'react-router-dom';
 
 import MainLayout from './../layout/MainLayout';
 
-const DashboardDefault = lazy(() => import('../views/dashboard/Default'));
+const DashboardDefault = lazy(() => import('../views/dashboard'));
 
 //Master
 const dataPeserta = lazy(() => import('../views/dataPeserta'));
 const dataPenguji = lazy(() => import('../views/dataPenguji'));
 
+const TableBasic2 = lazy(() => import('../views/forms/tables/TableBasic2'));
 const TableBasic = lazy(() => import('../views/forms/tables/TableBasic'));
 const TableDense = lazy(() => import('../views/forms/tables/TableDense'));
 
@@ -42,8 +43,9 @@ const MainRoutes = () => {
     return (
         <Route
             path={[
-                '/dashboard/default',
+                '/dashboard',
 
+                '/tables/tbl-basic2',
                 '/tables/tbl-basic',
                 '/tables/tbl-dense',
 
@@ -52,7 +54,7 @@ const MainRoutes = () => {
 
                 '/pendaftaranFitnProper',
                 '/pendaftaranWawancara',
-                '/penilaianFitnProper',
+                '/penilaianFitAndProper',
                 '/penilaianWawancara',
 
                 '/utils/util-typography',
@@ -74,12 +76,13 @@ const MainRoutes = () => {
         >
             <MainLayout showBreadcrumb={true}>
                 <Switch location={location} key={location.pathname}>
-                        <Route path="/dashboard/default" component={DashboardDefault} />
+                        <Route path="/dashboard" component={DashboardDefault} />
 
                         {/*Master*/}
                         <Route path="/dataPeserta" component={dataPeserta}/>
                         <Route path="/dataPenguji" component={dataPenguji}/>
                         
+                        <Route path="/tables/tbl-basic2" component={TableBasic2} />
                         <Route path="/tables/tbl-basic" component={TableBasic} />
                         <Route path="/tables/tbl-dense" component={TableDense} />
 

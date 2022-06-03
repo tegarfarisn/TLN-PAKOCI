@@ -298,11 +298,9 @@ const FirebaseLogin = (props, {className, ...rest}) => {
                                 type="submit"
                                 variant="contained"
                                 className={classes.login}
-                                
                             >
-                               LOGIN {/* <Link mt={2} fullwidth to ="/dashboard/default" style={{color:"white"}}> LOGIN</Link> */}
+                                Sign in
                             </Button>
-                            
                         </Box>
                     </form>
                 )}

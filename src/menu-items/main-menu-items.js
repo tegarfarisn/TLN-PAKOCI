@@ -108,9 +108,9 @@ const menuItems = {
             children: [
                 {
                     id: 'dash-default',
-                    title: <FormattedMessage id="default" />,
+                    title: <FormattedMessage id="Dashboard" />,
                     type: 'item',
-                    url: '/dashboard/default',
+                    url: '/dashboard',
                     icon: icons['IconDashboard'],
                 },
             ]
@@ -132,14 +132,14 @@ const menuItems = {
                             title: <FormattedMessage id="Data Peserta" />,
                             type: 'item',
                             url: '/datapeserta',
-                            target: true
+                            
                         },
                         {
                             id: 'dataPenguji',
                             title: <FormattedMessage id="Data Penguji" />,
                             type: 'item',
                             url: '/datapenguji',
-                            target: true
+                            
                         },
                     ] 
                 },  
@@ -155,14 +155,14 @@ const menuItems = {
                                     title: <FormattedMessage id="login" />,
                                     type: 'item',
                                     url: '/pages/login/login3',
-                                    target: true
+                                    
                                 },
                                 {
                                     id: 'register3',
                                     title: <FormattedMessage id="register" />,
                                     type: 'item',
                                     url: '/pages/register/register3',
-                                    target: true
+                                    
                                 }
                     ]
                 },
@@ -314,7 +314,7 @@ const menuItems = {
                 //     type: 'item',
                 //     url: '#',
                 //     icon: icons['IconHelp'],
-                //     target: true,
+                //target: true,
                 //     external: true
                 // }
             ]
