@@ -1,108 +1,58 @@
-# Berry Free React Material Admin Template [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Get%20Berry%20React%20-%20The%20most%20beautiful%20Material%20designed%20Admin%20Dashboard%20Template%20&url=https://berrydashboard.io&via=codedthemes&hashtags=reactjs,webdev,developers,javascript)
-
-[![Price](https://img.shields.io/badge/price-FREE-0098f7.svg)](https://github.com/codedthemes/berry-free-react-admin-template/blob/main/LICENSE)
-[![npm](https://img.shields.io/npm/v/froala-design-blocks.svg?colorB=brightgreen)](https://www.npmjs.com/package/berry-material-react-free)
-[![GitHub package version](https://img.shields.io/github/package-json/v/froala/design-blocks.svg)](https://github.com/codedthemes/berry-free-react-admin-template/)
+# How To Deploy Our Application
 
 
-Berry is a creative free react admin template build using the Material-UI. It is meant to be the best User Experience with highly customizable feature-riched pages. It is a complete game-changer React Dashboard Template with easy and intuitive responsive design as on retina screens or laptops.
 
-<a href="https://www.producthunt.com/posts/berry-free-react-admin-template?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-berry-free-react-admin-template" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=295529&theme=dark" alt="Berry - Free React Admin Template - Help you to create React web applications faster & beautiful | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
+Software DEployment mencakup semua langkah, proses, dan aktivitas yang diperlukan untuk membangun software atau update available bagi pengguna yang dituju. Saat ini, sebagian besar organisasi IT dan software developer menerapkan pembaruan Software, patch, dan aplikasi baru dengan kombinasi proses manual dan otomatis. Beberapa aktivitas yang paling umum dari deployment software yaitu perislisan software, instalasi, pengujian, deployment, dan monitoring.
 
-[Pro version](https://berrydashboard.io) of Berry react template contains features like TypeScript, Apps, Authentication Methods (i.e. JWT, Auth0, Firebase), Advance Components, Form Plugins, Layouts, Widgets, and many more.
+## Why is Software Deployment Important?
 
-![Berry React Material Admin Template](https://blog.berrydashboard.io/content/images/size/w1000/2021/04/Og-Blog-social.png)
+Software Deployment adalah salah satu aspek terpenting dari proses pengembangan perangkat lunak. Deployment adalah mekanisme di mana aplikasi, modul, pembaruan, dan patch dikirimkan dari pengembang ke pengguna. Metode yang digunakan oleh pengembang untuk membangun, menguji, dan menyebarkan kode baru akan memengaruhi seberapa cepat suatu produk dapat merespons perubahan preferensi atau persyaratan pelanggan dan kualitas setiap perubahan. 
 
-## Why Berry?
+Tim developer menyederhanakan proses pengembangan, pengujian, dan penerapan kode baru untuk merespons permintaan pelanggan dengan lebih cepat dengan pembaruan baru dan memberikan fitur baru lebih sering untuk mendorong kepuasan pelanggan, memenuhi kebutuhan pengguna, dan memanfaatkan peluang ekonomi. Software deployment mengacu pada proses membuat aplikasi bekerja pada perangkat target, dan perangkat dari target kami adalah komputer.
 
-Berry brings everything you need for dashboard development. We have added the following high-end features in the initial release.
+## Software Deployment Methodologies
 
- * Modern aesthetics UI design
- * Material-UI components
- * Fully Responsive, all modern browser supported
- * Easy to use code structure
- * Flexible & High-Performance code
- * Easy Documentation Guide
+DevOps adalah metodologi dan serangkaian praktik terbaik untuk pengembangan perangkat lunak yang tujuan utamanya adalah mempersingkat waktu pengiriman untuk pembaruan perangkat lunak baru sambil mempertahankan kualitas tinggi. Adapun tujuan dari penerapan metodologi ini adalah sebagai berikut.
 
-## Free version preview & download
+- Fast Development Methodologies
+- Fast Quality Assurance Methodologies
+- Fast Deployment Methodologies
+- Faster time to market
+- Iteration & Continuous Feedback (komunikasi yang kuat dan berkelanjutan antara stakeholder — end user dan customers, product owner, development, quality assurance, dan product engineers)
 
-We are expected to release the Free Berry React Admin Template in 07/05/2021
+## The steps of DevOps
 
-#### Preview
+### 1) Continuous Development
+Fase ini melibatkan perencanaan dan implementasi coding pada software. Visi proyek diputuskan selama fase perencanaan. Dan para developer mulai mengembangkan code untuk aplikasi tersebut.
 
- - [Demo](https://berrydashboard.io/free)
+### 2) Continuous Integration
+Tahap ini adalah inti dari seluruh DevOps life cycle. Hal ini merupakan praktik software development di mana deveolper perlu melakukan perubahan pada source code secara berkalla. Hal tersebut mungkin dapat dilakukan setiap hari atau setiap minggu. Kemudian setiap create commit memungkinkan deteksi dini masalah jika ada. Melakukan coding tidak hanya melibatkan kompilasi, tetapi juga mencakup unit testing, integration testing, code review, dan packaging.
 
-#### Download
+Kode yang mendukung fungsionalitas baru terus terintegrasi dengan kode yang ada. Oleh karena itu, ada pengembangan perangkat lunak yang berkelanjutan. Kode yang diperbarui perlu diintegrasikan secara terus menerus dan menyelaraskan dengan sistem untuk mencerminkan perubahan pada end-user.
 
- - [Download from Github](https://github.com/codedthemes/berry-free-react-admin-template)
- 
-## Pro version preview & Purchase
+### 3) Continuous Testing
+Fase ini merupakan fase di mana perangkat lunak yang dikembangkan terus dilakukan testing terhadap bugs. Untuk pengujian konstan, alat pengujian otomatisasi seperti TestNG, JUnit, Selenium, dll digunakan. Alat-alat ini memungkinkan QA untuk menguji beberapa basis kode secara menyeluruh secara paralel untuk memastikan bahwa tidak ada kekurangan dalam fungsionalitasnya. Pada fase ini, Docker Containers dapat digunakan untuk mensimulasikan lingkungan pengujian.
 
-Berry is available to purchase.
-#### Preview
+Pengujian otomatisasi dapat menghemat banyak waktu dan tenaga dalam menjalankan pengujian daripada melakukannya secara manual. Selain itu, pembuatan laporan merupakan nilai tambah yang besar. Tugas mengevaluasi kasus uji yang gagal dalam rangkaian uji menjadi lebih sederhana. Selain itu juga dapat menjadwalkan eksekusi kasus uji pada waktu yang telah ditentukan. Setelah pengujian, kode tersebut terus menerus terintegrasi dengan kode yang ada.|
 
- - [Demo](https://berrydashboard.io)
+### 4) Continuous Monitoring
+Monitoring adalah fase yang melibatkan semua faktor operasional dari seluruh proses DevOps, di mana informasi penting tentang penggunaan perangkat lunak dicatat dan diproses dengan cermat untuk mengetahui tren dan mengidentifikasi area masalah. Biasanya, pemantauan terintegrasi dalam kemampuan operasional aplikasi perangkat lunak.
 
-#### Purchase
+Dalam monitoring pencatatan mungkin dibuat dalam bentuk file dokumentasi atau mungkin menghasilkan data skala besar tentang parameter aplikasi ketika dalam posisi penggunaan terus menerus. Kesalahan sistem seperti server tidak dapat dijangkau, memori rendah, dll diselesaikan dalam fase ini. Ini menjaga keamanan dan ketersediaan layanan.
 
- - [Purchase from Material UI Store](https://material-ui.com/store/items/berry-react-material-admin/)
+### 5) Continuous Feedback
+Pengembangan aplikasi secara konsisten ditingkatkan dengan menganalisis hasil dari operasi perangkat lunak. Hal ini dilakukan dengan menempatkan fase kritis feedback konstan antara operasi dan pengembangan versi berikutnya dari aplikasi perangkat lunak saat ini. Kontinuitas adalah faktor penting dalam DevOps karena menghapus langkah-langkah yang tidak perlu yang diperlukan untuk mengambil aplikasi perangkat lunak dari pengembangan, menggunakannya untuk mengetahui masalahnya dan kemudian menghasilkan versi yang lebih baik. Hal ini dapat membunuh efisiensi yang mungkin dilakukan dengan aplikasi dan mengurangi jumlah pelanggan yang tertarik.
 
-## Table of contents
+### 6) Continuous Deployment
+![logo](https://static.javatpoint.com/tutorial/devops/images/devops-tutorial-9.png)
 
- * [Getting Started](#getting-started)
- * [Documentation](#documentation)
- * [Technology Stack](#technology-stack)
- * [Author](#author)
- * [Issues?](#issues)
- * [License](#license)
- * [More Products](#more-free-react-material-admin-templates)
- * [Follow us](#follow-us)
- 
-## Getting Started
+Pada fase ini, source code dideploy ke server produksi. Penting untuk memastikan bahwa source code digunakan dengan benar di semua server. Kode baru disebarkan terus menerus, dan management configuration tool memainkan peran penting dalam menjalankan tugas secara berkala dan cepat. Berikut adalah beberapa alat populer yang digunakan dalam fase ini, seperti Chef, Puppet, Ansible, dan SaltStack.
 
-Clone from Github 
-```
-git clone https://github.com/codedthemes/berry-free-react-admin-template.git
-```
+Containerization tool juga memainkan peran penting dalam fase deployment. Vagrant dan Docker adalah tool populer yang digunakan untuk tujuan ini. Tools ini membantu menghasilkan konsistensi di seluruh lingkungan pengembangan, pementasan, pengujian, dan produksi. Mereka juga membantu dalam meningkatkan dan mengurangi instans dengan lembut.
 
-## Documentation
+Tool containerization membantu menjaga konsistensi di seluruh lingkungan tempat aplikasi diuji, dikembangkan, dan diterapkan. Tidak ada kemungkinan kesalahan atau kegagalan dalam lingkungan produksi karena mereka mengemas dan mereplikasi dependensi dan paket yang sama yang digunakan dalam lingkungan pengujian, pengembangan, dan staging. Itu membuat aplikasi mudah dijalankan di komputer yang berbeda.
 
-Berry documentation helps you out in all aspects from Installation to deployment - Soon it will be available.
+### 6) Continuous Operations
+Semua operasi DevOps didasarkan pada kontinuitas dengan otomatisasi lengkap dari proses rilis dan memungkinkan organisasi untuk mempercepat deployement secara berkelanjutan. Jelas dari penjelasan diatas bahwa kontinuitas adalah faktor penting dalam DevOps dalam menghilangkan langkah-langkah yang sering mengganggu pengembangan, membutuhkan waktu lebih lama untuk mendeteksi masalah, dan menghasilkan versi produk yang lebih baik setelah beberapa bulan.
 
-## Technology Stack
 
- - [Material UI V5](https://material-ui.com/)
- - Built with React Hooks API
- - Redux & React Context API for State Management
- - React Router for Navigation Routing
- - Support of react-script
- - Code Splitting
- - CSS-in-JS where CSS is composed using JavaScript instead of defined in external files
-
-## Author
-
-Berry is managed by Team [CodedThemes](https://codedthemes.com).
-
-## Issues
-
-Please generate a Github issue if you found a bug in any version. We are trying to be responsive to resolve the issue.
-
-## License
-
- - Licensed cover under [MIT](https://github.com/codedthemes/datta-able-bootstrap-dashboard/blob/master/LICENSE)
-
-## More Free React Material Admin Templates
-
- - [Free Materially](https://codedthemes.com/item/materially-free-reactjs-admin-template/)
-
-## More Premium React Material Admin Templates
-
- - [Materially](https://codedthemes.com/item/materially-reactjs-admin-dashboard/)
- 
-## Follow us
- - Website [https://berrydashboard.io](https://berrydashboard.io)
- - Blog [https://blog.berrydashboard.io](https://blog.berrydashboard.io)
- - CodedThemes [https://codedthemes.com](https://codedthemes.com)
- - Dribbble [https://dribbble.com/codedthemes](https://dribbble.com/codedthemes)
- - Facebook [https://www.facebook.com/codedthemes](https://www.facebook.com/codedthemes)
- - Twitter [https://twitter.com/codedthemes](https://twitter.com/codedthemes)
