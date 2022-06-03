@@ -54,7 +54,7 @@ const MainRoutes = () => {
 
                 '/pendaftaranFitnProper',
                 '/pendaftaranWawancara',
-                '/penilaianFitAndProper',
+                '/penilaianFitnProper',
                 '/penilaianWawancara',
 
                 '/utils/util-typography',
