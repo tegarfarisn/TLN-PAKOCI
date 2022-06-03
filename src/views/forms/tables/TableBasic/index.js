@@ -7,23 +7,76 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import logoDefault from "../../../../assets/images/users/userNotFound.png"
+import * as URL from "../../../../api/"
 
 function TableBasic(){
-  const url = "http://192.168.202.8/:1337/api/pendaftars?populate[0]=pegawai.jabatan&populate[1]=pegawai.grade&populate[2]=pegawai.jenjang"
   const [posts, setPosts] = useState([])
-  const [pendaftar, setPendaftar] = useState([])
+  const [jenjang, setJenjang] = useState('')
+  const endpointPendaftar = URL.baseURL + "/pendaftars?populate[0]=pegawai.jabatan.grade.jenjang&sort[2]=id_pendaftar&populate[1]=pegawai.foto"
+  var nomor = 0;
+
 
   useEffect(() =>{
-    axios.get(url)
-        .then(res => {
-          console.log(res)
-          setPosts(res.data.data)
-        })
-        .catch(err => {
-          console.log(err)
-        })
+    if(posts.length === 0){
+      // axios.get(foto.concat(url))
+      axios.get(endpointPendaftar)
+      .then(res => {
+        console.log(res)
+        setPosts(res.data.data)
+      })
+      .catch(err => {
+        console.log(err)
+      })
+    }
+
 }, [posts])
 
+
+  //jika Grade kosong
+  // const cekGrade = (post)=> {
+  //   if (post.attributes.pegawai.data.attributes.jabatan.data.attributes.grade.data === null){
+  //     console.log("ini Grade kosong")
+
+  //     return "-"
+  //   }
+  //   else if (post.attributes.pegawai.data.attributes.jabatan.data.attributes.grade.data !== null){
+      
+  //     return post.attributes.pegawai.data.attributes.jabatan.data.attributes.grade.data.attributes.nama_grade
+      
+  //   }
+    
+  // }
+
+  //jika jenjang kosong
+  const cekJenjang = (post)=> {
+    if (post.attributes.pegawai.data.attributes.jabatan.data.attributes.grade.data.attributes.jenjang.data === null){
+      console.log("ini jenjang kosong", post.attributes.pegawai.data.attributes.jabatan.data.attributes.grade.data.attributes.jenjang.data)
+
+      return "-"
+    }
+    else if (post.attributes.pegawai.data.attributes.jabatan.data.attributes.grade.data.attributes.jenjang.data !== null){
+      
+      return post.attributes.pegawai.data.attributes.jabatan.data.attributes.grade.data.attributes.jenjang.data.attributes.jenjang_jabatan_struktural
+      
+    }
+    
+  }
+
+
+  //jika foto kosong
+  const cekFoto = (post)=> {
+    if (post.attributes.pegawai.data.attributes.foto.data === null){
+      console.log("ini foto kosong")
+      
+      return logoDefault
+    }
+    else if (post.attributes.pegawai.data.attributes.foto.data !== null){
+     
+      return URL.baseURLFoto + post.attributes.pegawai.data.attributes.foto.data.attributes.formats.thumbnail.url
+      
+    }
+  }
 
     return(
         <TableContainer component={Paper}>  
@@ -42,10 +95,14 @@ function TableBasic(){
               {posts.map(post => 
                 <TableBody>
                   <TableRow>
-                    <TableCell>{post.attributes.pegawai.data.id}</TableCell>
+                    <TableCell>{nomor = nomor + 1}</TableCell>
                     <TableCell align="right">{post.attributes.pegawai.data.attributes.nama}</TableCell>
                     <TableCell align="right">{post.attributes.pegawai.data.attributes.nip}</TableCell>
-                    <TableCell align="right">{post.attributes.pegawai.data.attributes.jenjang.data.attributes.jenjang_jabatan_struktural}</TableCell>
+                    <TableCell align="right">{post.attributes.pegawai.data.attributes.jabatan.data.attributes.nama_jabatan}</TableCell>
+                    <TableCell align="right">{post.attributes.pegawai.data.attributes.jabatan.data.attributes.grade.data.attributes.nama_grade}</TableCell>
+                    <TableCell align="right">{cekJenjang(post)}</TableCell>
+                    <TableCell align="right"><img src={cekFoto(post)} width="80"/></TableCell>
+                    
                     {/* <TableCell align="right">{post.attributes.pegawai.data.attributes.grade.data.attributes.nama_grade}</TableCell>
                     <TableCell align="right">{post.attributes.pegawai.data.attributes.jabatan.data.attributes.nama_jabatan}</TableCell> */}
                   </TableRow>
@@ -54,6 +111,11 @@ function TableBasic(){
           </Table>
         </TableContainer> 
       
+          
+            
+            
+           
+         
       
     )
 }
