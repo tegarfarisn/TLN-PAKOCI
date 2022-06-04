@@ -16,7 +16,6 @@ import { Card, CardHeader, Typography, Grid, Button, MenuItem, CardContent, Sele
 
 const DataPeserta = () => {
     const [listPendaftar, setListPendaftar] = useState([])
-    const [jenjang, setJenjang] = useState('')
     const [periode, setPeriode] = useState('Juni 2022')
     const [listPeriode, setListPeriode] = useState([])
     var nomor = 0;
@@ -39,7 +38,7 @@ const DataPeserta = () => {
 
     const getListPendaftar = () => {
         console.log("get list pendaftar");
-        axios.get(URL.baseURL + `/pendaftars?populate=pegawai.jabatan.grade.jenjang&populate=pegawai.foto&filters[periode][periode][$eq]=${periode}`)
+        axios.get(URL.baseURL + `/pendaftars?populate=pegawai.jabatan.grade.jenjang&populate=pegawai.foto&filters[periode][periode][$eq]=${periode}&populate=jabatan`)
             .then((res) => {
                 console.log("ini pendaftar", res.data.data);
                 setListPendaftar(res.data.data);
@@ -131,24 +130,26 @@ const DataPeserta = () => {
                             <TableHead>
                                 <TableRow>
                                     <TableCell >No</TableCell>
-                                    <TableCell align="right">Nama</TableCell>
-                                    <TableCell align="right">NIP</TableCell>
-                                    <TableCell align="right">Jabatan</TableCell>
-                                    <TableCell align="right">Grade</TableCell>
-                                    <TableCell align="right">Jenjang</TableCell>
-                                    <TableCell align="right">Foto</TableCell>
+                                    <TableCell align="center">Nama</TableCell>
+                                    <TableCell align="center">NIP</TableCell>
+                                    <TableCell align="center">Proyeksi Jabatan</TableCell>
+                                    <TableCell align="center">Jabatan Saat Ini</TableCell>
+                                    <TableCell align="center">Grade</TableCell>
+                                    <TableCell align="center">Jenjang</TableCell>
+                                    <TableCell align="center">Foto</TableCell>
                                 </TableRow>
                             </TableHead>
                             {listPendaftar.map(post =>
                                 <TableBody>
                                     <TableRow>
                                         <TableCell>{nomor = nomor + 1}</TableCell>
-                                        <TableCell align="right">{post.attributes.pegawai.data.attributes.nama}</TableCell>
-                                        <TableCell align="right">{post.attributes.pegawai.data.attributes.nip}</TableCell>
-                                        <TableCell align="right">{post.attributes.pegawai.data.attributes.jabatan.data.attributes.nama_jabatan}</TableCell>
-                                        <TableCell align="right">{post.attributes.pegawai.data.attributes.jabatan.data.attributes.grade.data.attributes.nama_grade}</TableCell>
-                                        <TableCell align="right">{cekJenjang(post)}</TableCell>
-                                        <TableCell align="right"><img src={cekFoto(post)} width="80" /></TableCell>
+                                        <TableCell align="center">{post.attributes.pegawai.data.attributes.nama}</TableCell>
+                                        <TableCell align="center">{post.attributes.pegawai.data.attributes.nip}</TableCell>
+                                        <TableCell align="center">{post.attributes.jabatan.data.attributes.nama_jabatan}</TableCell>
+                                        <TableCell align="center">{post.attributes.pegawai.data.attributes.jabatan.data.attributes.nama_jabatan}</TableCell>
+                                        <TableCell align="center">{post.attributes.pegawai.data.attributes.jabatan.data.attributes.grade.data.attributes.nama_grade}</TableCell>
+                                        <TableCell align="center">{cekJenjang(post)}</TableCell>
+                                        <TableCell align="center"><img src={cekFoto(post)} width="80" /></TableCell>
 
                                         {/* <TableCell align="right">{post.attributes.pegawai.data.attributes.grade.data.attributes.nama_grade}</TableCell>
                     <TableCell align="right">{post.attributes.pegawai.data.attributes.jabatan.data.attributes.nama_jabatan}</TableCell> */}
