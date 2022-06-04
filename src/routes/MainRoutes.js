@@ -14,6 +14,7 @@ const TableBasic = lazy(() => import('../views/forms/tables/TableBasic'));
 const TableDense = lazy(() => import('../views/forms/tables/TableDense'));
 
 // FitnProper
+const pendaftaranPenguji = lazy(() => import('../views/pendaftaranPenguji'));
 const pendaftaranFitnProper = lazy(() => import('../views/pendaftaranFitnProper'));
 const pendaftaranWawancara = lazy(() => import('../views/pendaftaranWawancara'));
 const penilaianFitnProper = lazy(() => import('../views/penilaianFitnProper'));
@@ -52,6 +53,7 @@ const MainRoutes = () => {
                 '/dataPeserta',
                 '/dataPenguji',
 
+                '/pendaftaranPenguji',
                 '/pendaftaranFitnProper',
                 '/pendaftaranWawancara',
                 '/penilaianFitnProper',
@@ -87,6 +89,7 @@ const MainRoutes = () => {
                         <Route path="/tables/tbl-dense" component={TableDense} />
 
                         {/*FitnProper*/}
+                        <Route path="/pendaftaranPenguji" component={pendaftaranPenguji}/>
                         <Route path="/pendaftaranFitnProper" component={pendaftaranFitnProper}/>
                         <Route path="/pendaftaranWawancara" component={pendaftaranWawancara}/>
                         <Route path="/penilaianFitnProper" component={penilaianFitnProper}/>
