@@ -38,7 +38,7 @@ const DataPeserta = () => {
 
     const getListPendaftar = () => {
         console.log("get list pendaftar");
-        axios.get(URL.baseURL + `/pendaftars?populate=pegawai.jabatan.grade.jenjang&populate=pegawai.foto&filters[periode][periode][$eq]=${periode}&populate=jabatan`)
+        axios.get(URL.baseURL + `/pendaftars?populate=pegawai.jabatan.grade.jenjang&populate=pegawai.foto&filters[periode][periode][$eq]=${periode}&populate=jabatan&populate=nilai_fnps.penguji.pegawai`)
             .then((res) => {
                 console.log("ini pendaftar", res.data.data);
                 setListPendaftar(res.data.data);
@@ -88,6 +88,23 @@ const DataPeserta = () => {
 
         }
     }
+
+    const cekPenguji = (post, urutan, value) => {
+        if (post.attributes.nilai_fnps.data[urutan] !== undefined) {
+            return post.attributes.nilai_fnps.data[urutan].attributes.penguji.data.attributes.pegawai.data.attributes.nama
+        }
+        else if (post.attributes.nilai_fnps.data[urutan] === undefined) {
+            return (
+                <Button onClick={() => ambilValue(post.id)} variant="contained" startIcon={<AddOutlined />}  >
+                    Tambah Penguji
+                </Button>
+            )
+        }
+    }
+
+    const ambilValue = (value) => {
+        console.log("id pendaftar:",value)
+    }
     return (
         <Grid container>
             <Grid item xs={12}>
@@ -126,30 +143,40 @@ const DataPeserta = () => {
                 </Button>
                 <Card>
                     <TableContainer component={Paper}>
-                        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                        <Table sx={{ minWidth: 1700 }} aria-label="dense table">
                             <TableHead>
                                 <TableRow>
-                                    <TableCell >No</TableCell>
-                                    <TableCell align="center">Nama</TableCell>
-                                    <TableCell align="center">NIP</TableCell>
-                                    <TableCell align="center">Proyeksi Jabatan</TableCell>
-                                    <TableCell align="center">Jabatan Saat Ini</TableCell>
-                                    <TableCell align="center">Grade</TableCell>
-                                    <TableCell align="center">Jenjang</TableCell>
-                                    <TableCell align="center">Foto</TableCell>
+                                    <TableCell width="50px" align="center">No</TableCell>
+                                    <TableCell width="100px" align="center">Foto</TableCell>
+                                    <TableCell width="100px" align="center">NIP</TableCell>
+                                    <TableCell width="300px" align="center">Nama</TableCell>
+                                    <TableCell width="150px" align="center">Grade</TableCell>
+                                    <TableCell width="200px" align="center">Jenjang</TableCell>
+                                    <TableCell width="300px" align="center">Proyeksi Jabatan</TableCell>
+                                    <TableCell width="300px" align="center">Jabatan Saat Ini</TableCell>
+                                    <TableCell width="300px" align="center">Penguji 1</TableCell>
+                                    <TableCell width="300px" align="center">Penguji 2</TableCell>
+                                    <TableCell width="300px" align="center">Penguji 3</TableCell>
+                                    <TableCell width="300px" align="center">Penguji 4</TableCell>
+                                    <TableCell width="300px" align="center">Penguji 5</TableCell>
                                 </TableRow>
                             </TableHead>
                             {listPendaftar.map(post =>
                                 <TableBody>
                                     <TableRow>
-                                        <TableCell>{nomor = nomor + 1}</TableCell>
-                                        <TableCell align="center">{post.attributes.pegawai.data.attributes.nama}</TableCell>
+                                        <TableCell align="center">{nomor = nomor + 1}</TableCell>
+                                        <TableCell align="center"><img src={cekFoto(post)} width="80" /></TableCell>
                                         <TableCell align="center">{post.attributes.pegawai.data.attributes.nip}</TableCell>
-                                        <TableCell align="center">{post.attributes.jabatan.data.attributes.nama_jabatan}</TableCell>
-                                        <TableCell align="center">{post.attributes.pegawai.data.attributes.jabatan.data.attributes.nama_jabatan}</TableCell>
+                                        <TableCell align="center">{post.attributes.pegawai.data.attributes.nama}</TableCell>
                                         <TableCell align="center">{post.attributes.pegawai.data.attributes.jabatan.data.attributes.grade.data.attributes.nama_grade}</TableCell>
                                         <TableCell align="center">{cekJenjang(post)}</TableCell>
-                                        <TableCell align="center"><img src={cekFoto(post)} width="80" /></TableCell>
+                                        <TableCell align="center">{post.attributes.jabatan.data.attributes.nama_jabatan}</TableCell>
+                                        <TableCell align="center">{post.attributes.pegawai.data.attributes.jabatan.data.attributes.nama_jabatan}</TableCell>
+                                        <TableCell align="center">{cekPenguji(post, 0)}</TableCell>
+                                        <TableCell align="center" value="satu">{cekPenguji(post, 1)}</TableCell>
+                                        <TableCell align="center">{cekPenguji(post, 2)}</TableCell>
+                                        <TableCell align="center">{cekPenguji(post, 3)}</TableCell>
+                                        <TableCell align="center">{cekPenguji(post, 4)}</TableCell>
 
                                         {/* <TableCell align="right">{post.attributes.pegawai.data.attributes.grade.data.attributes.nama_grade}</TableCell>
                     <TableCell align="right">{post.attributes.pegawai.data.attributes.jabatan.data.attributes.nama_jabatan}</TableCell> */}

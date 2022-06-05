@@ -134,24 +134,24 @@ const DataPenguji = () => {
                             <TableHead>
                                 <TableRow>
                                     <TableCell >No</TableCell>
-                                    <TableCell align="right">Nama</TableCell>
-                                    <TableCell align="right">NIP</TableCell>
-                                    <TableCell align="right">Jabatan</TableCell>
-                                    <TableCell align="right">Grade</TableCell>
-                                    <TableCell align="right">Jenjang</TableCell>
-                                    <TableCell align="right">Foto</TableCell>
+                                    <TableCell align="center">Foto</TableCell>
+                                    <TableCell align="center">NIP</TableCell>
+                                    <TableCell align="center">Nama</TableCell>
+                                    <TableCell align="center">Grade</TableCell>
+                                    <TableCell align="center">Jenjang</TableCell>
+                                    <TableCell align="center">Jabatan</TableCell>
                                 </TableRow>
                             </TableHead>
                             {listPenguji.map(post =>
                                 <TableBody>
                                     <TableRow>
                                         <TableCell>{nomor = nomor + 1}</TableCell>
-                                        <TableCell align="right">{post.attributes.pegawai.data.attributes.nama}</TableCell>
-                                        <TableCell align="right">{post.attributes.pegawai.data.attributes.nip}</TableCell>
-                                        <TableCell align="right">{post.attributes.pegawai.data.attributes.jabatan.data.attributes.nama_jabatan}</TableCell>
-                                        <TableCell align="right">{post.attributes.pegawai.data.attributes.jabatan.data.attributes.grade.data.attributes.nama_grade}</TableCell>
-                                        <TableCell align="right">{cekJenjang(post)}</TableCell>
-                                        <TableCell align="right"><img src={cekFoto(post)} width="80" /></TableCell>
+                                        <TableCell align="center"><img src={cekFoto(post)} width="80" /></TableCell>
+                                        <TableCell align="center">{post.attributes.pegawai.data.attributes.nip}</TableCell>
+                                        <TableCell align="center">{post.attributes.pegawai.data.attributes.nama}</TableCell>
+                                        <TableCell align="center">{post.attributes.pegawai.data.attributes.jabatan.data.attributes.grade.data.attributes.nama_grade}</TableCell>
+                                        <TableCell align="center">{cekJenjang(post)}</TableCell>
+                                        <TableCell align="center">{post.attributes.pegawai.data.attributes.jabatan.data.attributes.nama_jabatan}</TableCell>
 
                                         {/* <TableCell align="right">{post.attributes.pegawai.data.attributes.grade.data.attributes.nama_grade}</TableCell>
                     <TableCell align="right">{post.attributes.pegawai.data.attributes.jabatan.data.attributes.nama_jabatan}</TableCell> */}
