@@ -31,7 +31,7 @@ const rekapNilaiWawancara = ()=> {
                     <Grid container spacing={1} paddingTop={3}>
                         <Stack direction="row" alignItems="center" gap={1}>
                         <CalendarMonthOutlinedIcon md ={2.2}/>
-                        <Typography variant="h4">Report Nilai Wawancara</Typography>
+                        <Typography variant="h4">Rekap Nilai Wawancara</Typography>
                         </Stack> 
                     </Grid>
                     </CardContent>
@@ -44,7 +44,6 @@ const rekapNilaiWawancara = ()=> {
                                     <TableCell align="right">NIP</TableCell>
                                     <TableCell align="right">Nama</TableCell>
                                     <TableCell align="right">Jabatan Proyeksi</TableCell>
-                                    <TableCell align="right">Tanggal Uji</TableCell>
                                     <TableCell align="right">Hasil Nilai</TableCell>
                                     
                                 </TableRow>
@@ -52,7 +51,6 @@ const rekapNilaiWawancara = ()=> {
                             <TableBody>
                             <TableRow>
                                     <TableCell align="right"> </TableCell>
-                                    <TableCell align="right"></TableCell>
                                     <TableCell align="right"></TableCell>
                                     <TableCell align="right"></TableCell>
                                     <TableCell align="right"></TableCell>

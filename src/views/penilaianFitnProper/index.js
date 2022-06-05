@@ -1,8 +1,8 @@
 import React from 'react';
 import Stack from '@mui/material/Stack';
-import {Card, CardContent, CardHeader, Grid, Typography, TextField, Table, TableContainer, TebleHead, TableRow, TableCell} from '@material-ui/core';
+import {Card, CardContent, CardHeader, Grid, Typography, TextField} from '@material-ui/core';
 import EventNoteOutlinedIcon from '@mui/icons-material/EventNoteOutlined';
-//import TableFit from '../forms/tables/TableFit';
+
 
 const penilaianFitnProper = () => {
     return (
@@ -11,9 +11,7 @@ const penilaianFitnProper = () => {
                 <Card>
                 <CardHeader title={<Typography variant="h3">Input Nilai Peserta </Typography>} />
                 <CardContent>
-                <TableContainer>
-
-                </TableContainer>
+    
                 <Grid container spacing={1} paddingBottom={3}>
                     <Grid item xs={3} md={2.2}>
                         <Typography variant="h5" paddingLeft={3} display='center' >
@@ -26,7 +24,7 @@ const penilaianFitnProper = () => {
                         type="Nama"
                         autoComplete="current-password"
                         value=""
-                        disabled/>
+                        />
                     </Grid>
                     <Grid container spacing={1} paddingTop={3}>
                         <Stack direction="row" alignItems="center" gap={1}>
@@ -47,7 +45,6 @@ const penilaianFitnProper = () => {
                             type="Nilai"
                             autoComplete="current-password"
                             value=""
-                            disabled
                             />
                         <Grid item xs={3} md={2.2}>
                             <Typography variant="h5" paddingLeft={4} display='center' >
@@ -60,7 +57,6 @@ const penilaianFitnProper = () => {
                             type="Nilai"
                             autoComplete="current-password"
                             value=""
-                            disabled
                             />
                     </Grid>
 
@@ -76,7 +72,6 @@ const penilaianFitnProper = () => {
                             type="Nilai"
                             autoComplete="current-password"
                             value=""
-                            disabled
                             />
                         <Grid item xs={3} md={2.2}>
                             <Typography variant="h5" paddingLeft={4} display='center' >
@@ -89,7 +84,6 @@ const penilaianFitnProper = () => {
                             type="Nilai"
                             autoComplete="current-password"
                             value=""
-                            disabled
                             />
                     </Grid>
 
@@ -105,7 +99,6 @@ const penilaianFitnProper = () => {
                             type="Nilai"
                             autoComplete="current-password"
                             value=""
-                            disabled
                             />
                         <Grid item xs={3} md={2.2}>
                             <Typography variant="h5" paddingLeft={4} display='center' >
@@ -118,7 +111,6 @@ const penilaianFitnProper = () => {
                             type="Nilai"
                             autoComplete="current-password"
                             value=""
-                            disabled
                             />
                     </Grid>
                     <Grid container spacing={1} paddingBottom={4}>
@@ -133,7 +125,6 @@ const penilaianFitnProper = () => {
                             type="Nilai"
                             autoComplete="current-password"
                             value=""
-                            disabled
                             />
                         <Grid item xs={3} md={2.2}>
                             <Typography variant="h5" paddingLeft={4} display='center' >
@@ -146,7 +137,6 @@ const penilaianFitnProper = () => {
                             type="Nilai"
                             autoComplete="current-password"
                             value=""
-                            disabled
                             />
                     </Grid>
                     <Grid container spacing={1} paddingBottom={4}>
@@ -161,7 +151,7 @@ const penilaianFitnProper = () => {
                             type="Nilai"
                             autoComplete="current-password"
                             value=""
-                            disabled
+        
                             />
                         <Grid item xs={3} md={2.2}>
                             <Typography variant="h5" paddingLeft={4} display='center' >
@@ -174,7 +164,6 @@ const penilaianFitnProper = () => {
                             type="Nilai"
                             autoComplete="current-password"
                             value=""
-                            disabled
                             />
                     </Grid>
                     <Grid container spacing={1} paddingBottom={4}>
@@ -189,7 +178,6 @@ const penilaianFitnProper = () => {
                             type="Nilai"
                             autoComplete="current-password"
                             value=""
-                            disabled
                             />
                         <Grid item xs={3} md={2.2}>
                             <Typography variant="h5" paddingLeft={4} display='center' >
@@ -202,7 +190,6 @@ const penilaianFitnProper = () => {
                             type="Nilai"
                             autoComplete="current-password"
                             value=""
-                            disabled
                             />
                     </Grid>
                     <Grid container spacing={1} paddingBottom={4}>
@@ -217,7 +204,6 @@ const penilaianFitnProper = () => {
                             type="Nilai"
                             autoComplete="current-password"
                             value=""
-                            disabled
                             />
                         <Grid item xs={3} md={2.2}>
                             <Typography variant="h5" paddingLeft={4} display='center' >
@@ -230,7 +216,6 @@ const penilaianFitnProper = () => {
                             type="Nilai"
                             autoComplete="current-password"
                             value=""
-                            disabled
                             />
                     </Grid>
 
@@ -246,16 +231,9 @@ const penilaianFitnProper = () => {
                             type="Nilai"
                             autoComplete="current-password"
                             value=""
-                            disabled
                             />
                     </Grid>
-                    
-                    
-                    
-                    
-                    
                 </Card>
-
             </Grid>
         </Grid>
     );

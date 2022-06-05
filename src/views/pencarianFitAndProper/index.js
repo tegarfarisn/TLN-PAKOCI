@@ -1,9 +1,7 @@
 import React from 'react';
 import Stack from '@mui/material/Stack';
 import {useState} from 'react';
-import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
 import {ReplyOutlined} from '@material-ui/icons';
-import TableDense from '../forms/tables/TableDense';
 import {Card, 
     CardContent,
     Grid, 
@@ -15,8 +13,9 @@ import {Card,
     TableHead,
     TableRow, 
     TableCell, 
-    Paper,
-    TextField} from '@material-ui/core';
+    TextField,
+    FormControl,
+    InputLabel } from '@material-ui/core';
 import ManageSearchOutlinedIcon from '@mui/icons-material/ManageSearchOutlined';
 import MessageTwoToneIcon from '@mui/icons-material/MessageTwoTone';
 
@@ -32,13 +31,36 @@ const pencarianFitAndProper = ()=> {
                     </Button>
                     <Grid container spacing={1} paddingTop={3}>
                         <Stack direction="row" alignItems="center" gap={1}>
-                        <CalendarMonthOutlinedIcon md ={2.2}/>
-                        <Typography variant="h4">Report Nilai Penilaian Fit & Proper</Typography>
+                        <ManageSearchOutlinedIcon md ={2.2}/>
+                        <Typography variant="h4">Cari Fit And Proper</Typography>
                         </Stack> 
                     </Grid>
                     </CardContent>
+
+                    <Grid container spacing={1} paddingBottom={4}>
+                        <Grid item xs={3} md={2.2}>
+                            <Typography variant="h5" paddingLeft={3} display='center' >
+                            Input NIP Peserta
+                            </Typography>
+                        </Grid>
+                            <TextField
+                            id="fullWidth"
+                            label="NIP"
+                            type="NIP"
+                            autoComplete="current-password"
+                            value=""
+                            />
+                        <Grid item xs={3} md={2.2}>
+                        <FormControl >
+                        <InputLabel /*onChange={(e) => setPendaftar(e.target.value)} value={pendaftar}*//> 
+                            <Button variant="contained" type="submit"  /*onClick={() => postFitProper()}*/>Cari</Button>
+                        </FormControl>
+                        </Grid>
+                            
+                    </Grid>
+
                    
-                    <TableContainer component={Paper}>
+                    <TableContainer>
                         <Table sx={{ minWidth: 650 }} aria-label="simple table">
                             <TableHead>
                                 <TableRow>

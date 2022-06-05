@@ -1,22 +1,49 @@
 import React from 'react';
-import {Card, CardContent, CardHeader, Divider, Grid, Typography} from '@material-ui/core';
+import Stack from '@mui/material/Stack';
+import {Card, CardContent, CardHeader, Grid, Typography, TextField} from '@material-ui/core';
+import EventNoteOutlinedIcon from '@mui/icons-material/EventNoteOutlined';
 
 const PenilaianWawancara = () => {
     return (
         <Grid container>
             <Grid item xs={12}>
                 <Card>
-                    <CardHeader title={<Typography variant="h5">Sample Card</Typography>} />
-                    <Divider />
-                    <CardContent>
-                        <Typography variant="body2">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                            laborum.
+                <Grid container spacing={1} paddingTop={3} paddingLeft={4}>
+                    <Stack direction="row" alignItems="center" gap={1}>
+                        <EventNoteOutlinedIcon md ={2.2}/>
+                        <Typography variant="h4">Penilaian Penguji Fit & Proper</Typography>
+                    </Stack> 
+                </Grid>
+                <Grid container spacing={1} paddingBottom={3} paddingTop={3}>
+                <Grid item xs={2} md={2.2}>
+                        <Typography variant="h5" paddingLeft={3} display='center' >
+                            Nama Peserta
                         </Typography>
-                    </CardContent>
+                        </Grid>
+                        <TextField
+                         id="fullWidth"
+                        label="Nama"
+                        type="Nama"
+                        autoComplete="current-password"
+                        value=""
+                        /> 
+                </Grid>
+
+                <Grid container spacing={1} paddingBottom={3} paddingTop={3}>
+                <Grid item xs={2} md={2.2}>
+                    <Typography variant="h5" paddingLeft={3} display='center' >
+                         Nama Peserta
+                    </Typography>
+                    </Grid>
+                        <TextField
+                        id="outlined-multiline-static fullwidth"
+                        label=""
+                        multiline
+                        rows={4}
+                        placeholder="ex. critical thingking : 80"
+                        /> 
+                </Grid>
+                   
                 </Card>
             </Grid>
         </Grid>

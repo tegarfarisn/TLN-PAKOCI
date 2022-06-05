@@ -1,5 +1,6 @@
 import React from 'react';
 import Stack from '@mui/material/Stack';
+import axios from 'axios';
 import {useState} from 'react';
 import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
 import {ReplyOutlined} from '@material-ui/icons';
@@ -10,11 +11,11 @@ import {Card, CardContent, Grid, Typography, Button,
     TableContainer,
     TableHead,
 TableRow, TableCell,
-Paper, TextField} from '@material-ui/core';
+ TextField} from '@material-ui/core';
 
 const rekapManual = ()=> {
     
-       
+
     return (
         <Grid container>
             <Grid item xs={12}>
@@ -29,40 +30,48 @@ const rekapManual = ()=> {
                         <Typography variant="h4">Report Nilai Penilaian Fit & Proper</Typography>
                         </Stack> 
                     </Grid>
-                    <TableContainer>
-                    <Table>
-                        <TableRow>
-                        <TableCell align="center" colSpan={2}>
-                        NIP
-                        <TextField
-                            id="outlined-password-input"
+                    <Grid container spacing={1} paddingBottom={4} paddingTop={2}>
+                        <Grid item xs={1} md={1}>
+                            <Typography variant="h5" paddingLeft={3} display='center' >
+                            NIP
+                            </Typography>
+                        </Grid>
+                            <TextField
+                            id="fullWidth"
                             label="NIP"
                             type="NIP"
-                            textAlign ="center"
-                            autoComplete="current-password"/>
-                        </TableCell>
-                        <TableCell align="center" colSpan={2}>Jabatan Jenjang
+                            autoComplete="current-password"
+                            value=""
+                            />
+                        <Grid item xs={3} md={2.2}>
+                            <Typography variant="h5" paddingLeft={4} display='center' >
+                            Jabatan Proyeksi 
+                            </Typography>
+                        </Grid>
+                            <TextField
+                            id="fullWidth"
+                            label="Jabatan Proyeksi"
+                            type="Jabatan Proyeksi "
+                            autoComplete="current-password"
+                            value=""
+                            />
+                        <Grid item xs={1} md={1}>
+                            <Typography variant="h5" paddingLeft={3} display='center' >
+                                Tanggal
+                            </Typography>
+                        </Grid>
                         <TextField
-                            id="outlined-password-input"
-                            label="Jenjang"
-                            type="Jenjang"
-                            textAlign ="center"
-                            autoComplete="current-password"/></TableCell>
-                        <TableCell align="center" colSpan={2}>Tanggal 
-                        <TextField
-                            id="outlined-password-input"
-                            label="tanggal"
-                            type="tanggal"
-                            textAlign ="center"
-                            autoComplete="current-password"/></TableCell>
-                         <TableCell align="center" colSpan={2}>
-                            <Button variant="contained" md={1} type="submit" >
+                            id="fullwidth"
+                            label=""
+                            type="Date"
+                            // onChange={(e) => setPendaftar({ ...pendaftar, date: e.target.value })}
+                            autoComplete="current-password" />
+                        <Grid item xs={3} md={2.2}>
+                        <Button variant="contained" md={1} type="submit"  >
                             CEK
-                            </Button>
-                         </TableCell>   
-                        </TableRow>
-                    </Table>
-                    </TableContainer>
+                        </Button>
+                        </Grid>
+                    </Grid>
                     <Typography variant="h4">Report Nilai</Typography>
                     <TableContainer>
                         <Table striped style={{ display:'block', 'overflow-x':'scroll'}}>

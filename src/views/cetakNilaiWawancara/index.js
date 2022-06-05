@@ -1,5 +1,5 @@
 import React from 'react';
-import {Card, CardContent, CardHeader, Divider, Grid, Typography} from '@material-ui/core';
+import {Card, CardHeader, Divider, Grid, Typography} from '@material-ui/core';
 import TableNilaiWawancara from '../forms/tables/TableNilaiWawancara'
 
 const cetakNilaiWawancara = () => {
@@ -7,7 +7,7 @@ const cetakNilaiWawancara = () => {
         <Grid container>
             <Grid item xs={12}>
                 <Card>
-                    <CardHeader title={<Typography variant="h5">Report Nilai Peserta Fit & Proper</Typography>} />
+                    <CardHeader title={<Typography variant="h5">Cetak Nilai Wawancara</Typography>} />
                     <Divider />
                 <TableNilaiWawancara />
                 </Card>

@@ -1,8 +1,8 @@
 import * as React from 'react';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import { Card, CardContent, CardHeader, Divider, Grid, Typography, Button, TextField, Select, MenuItem, FormControl, Box, InputLabel } from '@material-ui/core';
-import { gridSpacing } from '../../store/constant';
+import { Card, CardContent, CardHeader, Grid, Typography, Button, TextField, Select, MenuItem, FormControl, InputLabel } from '@material-ui/core';
+
 import { ReplyOutlined } from '@material-ui/icons';
 import * as URL from '../../api/index'
 
@@ -402,11 +402,11 @@ const PendaftaranFitnProper = () => {
               </FormControl>
             </Grid>
           </Grid>
-          <Grid container spacing={1} paddingBottom={3}>
+          <Grid container spacing={3} paddingBottom={3} paddingLeft={2}>
             <Grid item xs={3} md={2.2}>
               <FormControl >
                 <InputLabel onChange={(e) => setPendaftar(e.target.value)} value={pendaftar} />
-                <Button variant="contained" md={1} type="submit" onClick={() => postFitProper()}>Submit</Button>
+                <Button variant="contained" type="submit" onClick={() => postFitProper()}>Submit</Button>
               </FormControl>
             </Grid>
           </Grid>
