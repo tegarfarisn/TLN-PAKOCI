@@ -46,7 +46,8 @@ import {
     IconTools,
     IconTypography,
     IconUser,
-    IconUserCheck
+    IconUserCheck,
+    IconSearch
 } from '@tabler/icons';
 
 const icons = {
@@ -56,7 +57,7 @@ const icons = {
     IconChartArcs: IconChartArcs,
     IconClipboardList: IconClipboardList,
     IconChartInfographic: IconChartInfographic,
-
+    IconSearch: IconSearch,
     IconForms: IconForms,
     IconReceipt2: IconReceipt2,
     IconPencil: IconPencil,
@@ -195,11 +196,16 @@ const menuItems = {
                             
                         },
                         {
-                            id: 'penilaianFitnProper',
-                            title: <FormattedMessage id="Penilaian Fit & Proper" />,
+                            id: 'penilaianPeserta',
+                            title: <FormattedMessage id="Penilaian Peserta Fit & Proper" />,
                             type: 'item',
-                            url: '/penilaianFitnProper',
-                            
+                            url: '/penilaianPeserta',
+                        },
+                        {
+                            id: 'penilaianPenguji',
+                            title: <FormattedMessage id="Penilaian Penguji Fit & Proper" />,
+                            type: 'item',
+                            url: '/penilaianPenguji',
                         },
                         {
                             id: 'penilaianWawancara',
@@ -318,7 +324,21 @@ const menuItems = {
                 //     external: true
                 // }
             ]
-        }
+        },
+        {
+            id: 'pencarianFitAndProper',
+            type: 'group',
+            children: [
+                {
+                    id: 'pencarianFitAndProper',
+                    title: <FormattedMessage id="Pencarian Fit & Proper" />,
+                    type: 'item',
+                    url: '/pencarianFitAndProper/',
+                    icon: icons['IconSearch'],
+                    breadcrumbs: false
+                }
+            ]
+        },
     ]
 };
 

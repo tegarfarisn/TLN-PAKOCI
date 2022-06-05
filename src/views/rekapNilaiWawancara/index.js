@@ -1,22 +1,69 @@
 import React from 'react';
-import {Card, CardContent, CardHeader, Divider, Grid, Typography} from '@material-ui/core';
+import Stack from '@mui/material/Stack';
+import {useState} from 'react';
+import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
+import {ReplyOutlined} from '@material-ui/icons';
+import TableDense from '../forms/tables/TableDense';
+import {Card, 
+    CardContent,
+    Grid, 
+    Typography, 
+    Button, 
+    Table, 
+    TableBody, 
+    TableContainer,
+    TableHead,
+    TableRow, 
+    TableCell, 
+    } from '@material-ui/core';
+import MessageTwoToneIcon from '@mui/icons-material/MessageTwoTone';
 
-const rekapNilaiWawancara = () => {
+const rekapNilaiWawancara = ()=> {
+    
     return (
         <Grid container>
             <Grid item xs={12}>
                 <Card>
-                    <CardHeader title={<Typography variant="h5">Sample Card</Typography>} />
-                    <Divider />
-                    <CardContent>
-                        <Typography variant="body2">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                            laborum.
-                        </Typography>
+                <CardContent>
+                    <Button href= "../dashboard"  variant="contained" startIcon={<ReplyOutlined/>}  >
+                        Kembali
+                    </Button>
+                    <Grid container spacing={1} paddingTop={3}>
+                        <Stack direction="row" alignItems="center" gap={1}>
+                        <CalendarMonthOutlinedIcon md ={2.2}/>
+                        <Typography variant="h4">Report Nilai Wawancara</Typography>
+                        </Stack> 
+                    </Grid>
                     </CardContent>
+                   
+                    <TableContainer>
+                        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                            <TableHead>
+                                <TableRow>
+                                    <TableCell >No </TableCell>
+                                    <TableCell align="right">NIP</TableCell>
+                                    <TableCell align="right">Nama</TableCell>
+                                    <TableCell align="right">Jabatan Proyeksi</TableCell>
+                                    <TableCell align="right">Tanggal Uji</TableCell>
+                                    <TableCell align="right">Hasil Nilai</TableCell>
+                                    
+                                </TableRow>
+                            </TableHead>
+                            <TableBody>
+                            <TableRow>
+                                    <TableCell align="right"> </TableCell>
+                                    <TableCell align="right"></TableCell>
+                                    <TableCell align="right"></TableCell>
+                                    <TableCell align="right"></TableCell>
+                                    <TableCell align="right"></TableCell>
+                                    <TableCell align="right"> </TableCell>
+                                    
+                                </TableRow>
+                            </TableBody>
+                        </Table>
+                    </TableContainer>
+                    
+                    
                 </Card>
             </Grid>
         </Grid>

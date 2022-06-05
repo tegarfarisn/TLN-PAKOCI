@@ -20,56 +20,52 @@ import {Card,
 import ManageSearchOutlinedIcon from '@mui/icons-material/ManageSearchOutlined';
 import MessageTwoToneIcon from '@mui/icons-material/MessageTwoTone';
 
-const pencarianFitAndProper = ()=> {
-       
+const penilaianPenguji = ()=> {
+    var nomor = 0;
+
     return (
         <Grid container>
             <Grid item xs={12}>
                 <Card>
-                <CardContent>
-                    <Button href= "../dashboard"  variant="contained" startIcon={<ReplyOutlined/>}  >
-                        Kembali
-                    </Button>
-                    <Grid container spacing={1} paddingTop={3}>
-                        <Stack direction="row" alignItems="center" gap={1}>
+                <Grid container spacing={1} paddingTop={3} paddingLeft={4}>
+                    <Stack direction="row" alignItems="center" gap={1}>
                         <CalendarMonthOutlinedIcon md ={2.2}/>
-                        <Typography variant="h4">Report Nilai Penilaian Fit & Proper</Typography>
-                        </Stack> 
+                        <Typography variant="h4">Penilaian Penguji Fit & Proper</Typography>
+                    </Stack> 
                     </Grid>
-                    </CardContent>
-                   
+                    <Grid container spacing={1} paddingTop={4} paddingLeft={4} paddingBottom= {2}>   
+                    <Typography variant="h5" PaddingTop={4} display='center' >
+                        Penguji 1 :
+                    </Typography>
+                    </Grid>
                     <TableContainer component={Paper}>
                         <Table sx={{ minWidth: 650 }} aria-label="simple table">
                             <TableHead>
                                 <TableRow>
-                                    <TableCell >No </TableCell>
-                                    <TableCell align="right">NIP</TableCell>
-                                    <TableCell align="right">Nama</TableCell>
+                                    <TableCell >No</TableCell>
+                                    <TableCell align="right">Nama Peserta</TableCell>
+                                    <TableCell align="right">Jabatan Saat Ini</TableCell>
                                     <TableCell align="right">Jabatan Proyeksi</TableCell>
-                                    <TableCell align="right">Tanggal Uji</TableCell>
-                                    <TableCell align="right">Hasil Nilai</TableCell>
-                                    <TableCell align="right">Lihat</TableCell>
+                                    <TableCell align="right">Tambah Nilai</TableCell>
+                                    <TableCell align="right">Lihat Nilai</TableCell>
                                 </TableRow>
                             </TableHead>
                             <TableBody>
                             <TableRow>
-                                    <TableCell align="right"> </TableCell>
+                                    <TableCell align="right">{nomor = nomor + 1}</TableCell>
                                     <TableCell align="right"></TableCell>
                                     <TableCell align="right"></TableCell>
                                     <TableCell align="right"></TableCell>
-                                    <TableCell align="right"></TableCell>
-                                    <TableCell align="right"> </TableCell>
-                                    <TableCell align="right"> <Button variant="contained" startIcon={<MessageTwoToneIcon/>} href="#contained-buttons">Lihat</Button></TableCell>
+                                    <TableCell align="right"><Button variant="contained" startIcon={<MessageTwoToneIcon/>} href="../penilaianFitnProper">Tambah Nilai</Button></TableCell>
+                                    <TableCell align="right"><Button variant="contained" startIcon={<MessageTwoToneIcon/>} href="#contained-buttons">Lihat Nilai</Button></TableCell>
                                 </TableRow>
                             </TableBody>
                         </Table>
                     </TableContainer>
-                    
-                    
                 </Card>
             </Grid>
         </Grid>
     );
 };
 
-export default pencarianFitAndProper;
+export default penilaianPenguji;

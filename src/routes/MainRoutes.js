@@ -19,6 +19,9 @@ const pendaftaranWawancara = lazy(() => import('../views/pendaftaranWawancara'))
 const penilaianFitnProper = lazy(() => import('../views/penilaianFitnProper'));
 const penilaianWawancara = lazy(() => import('../views/penilaianWawancara'));
 
+const penilaianPeserta = lazy(() => import('../views/penilaianPeserta'));
+const penilaianPenguji = lazy(() => import('../views/penilaianPenguji'));
+
 const UtilsTypography = lazy(() => import('../views/utilities/typography'));
 const UtilsColor = lazy(() => import('../views/utilities/color'));
 const UtilsShadow = lazy(() => import('../views/utilities/shadow'));
@@ -31,6 +34,8 @@ const rekapManual = lazy(() => import('../views/rekapManual'));
 const cetakNilaiFitnProper = lazy(() => import('../views/cetakNilaiFitnProper'));
 const rekapNilaiWawancara = lazy(() => import('../views/rekapNilaiWawancara'));
 const cetakNilaiWawancara = lazy(() => import('../views/cetakNilaiWawancara'));
+
+const pencarianFitAndProper = lazy(() => import('../views/pencarianFitAndProper'));
 
 const tambahPeserta = lazy(() => import('../views/tambahPeserta'));
 
@@ -57,6 +62,9 @@ const MainRoutes = () => {
                 '/penilaianFitnProper',
                 '/penilaianWawancara',
 
+                '/penilaianPeserta',
+                '/penilaianPenguji',
+
                 '/utils/util-typography',
                 '/utils/util-color',
                 '/utils/util-shadow',
@@ -68,6 +76,8 @@ const MainRoutes = () => {
                 '/cetakNilaiFitnProper',
                 '/rekapNilaiWawancara',
                 '/cetakNilaiWawancara',
+
+                '/pencarianFitAndProper',
 
                 '/tambahPeserta',
 
@@ -92,6 +102,9 @@ const MainRoutes = () => {
                         <Route path="/penilaianFitnProper" component={penilaianFitnProper}/>
                         <Route path="/penilaianWawancara" component={penilaianWawancara}/>
 
+                        <Route path="/penilaianPeserta" component={penilaianPeserta}/>
+                        <Route path="/penilaianPenguji" component={penilaianPenguji}/>
+
                         <Route path="/utils/util-typography" component={UtilsTypography} />
                         <Route path="/utils/util-color" component={UtilsColor} />
                         <Route path="/utils/util-shadow" component={UtilsShadow} />
@@ -104,6 +117,8 @@ const MainRoutes = () => {
                         <Route path="/cetakNilaiFitnProper" component={cetakNilaiFitnProper}/>
                         <Route path="/rekapNilaiWawancara" component={rekapNilaiWawancara}/>
                         <Route path="/cetakNilaiWawancara" component={cetakNilaiWawancara}/>
+
+                        <Route path="/pencarianFitAndProper" component={pencarianFitAndProper}/>
 
                         <Route path="/tambahPeserta" component={tambahPeserta}/>
 

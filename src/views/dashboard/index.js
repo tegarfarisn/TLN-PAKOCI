@@ -72,7 +72,7 @@ const Dashboard = () => {
       <Typography variant="h2" xs={12} md={2.2} paddingBottom={2}>Welcome Admin! </Typography>
       <Grid item xs={12}>
         <Card>
-          <CardHeader title={<Typography variant="h1"> Pilih Periode Fit n Proper</Typography>} />
+          <CardHeader title={<Typography variant="h2"> Pilih Periode Fit n Proper</Typography>} />
           <CardContent>
             <Grid container spacing={1} paddingBottom={3}>
               <Grid item xs={2} md={2.2}>
@@ -102,7 +102,10 @@ const Dashboard = () => {
         </Card>
         <br></br>
         <Card marginTop={3}>
-          <CardHeader mt={3} title={<Typography variant="h1"> Apa ya </Typography>} />
+          <Stack direction="row" alignItems="center" gap={4}>
+           
+            <CardHeader mt={3} startIcon={CalendarMonthOutlinedIcon} title={<Typography variant="h3"> Pegawai Fit & Proper </Typography>} />
+          </Stack>
           <CardContent>
             <Stack direction="row" alignItems="center" gap={4}   >
               <Typography variant="h4">Jumlah Penguji: {jumlahPenguji}</Typography>
