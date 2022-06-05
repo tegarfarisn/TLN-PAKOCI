@@ -182,6 +182,13 @@ const menuItems = {
                     icon: icons['IconSitemap'],
                     children: [
                         {
+                            id: 'pendaftaranPenguji',
+                            title: <FormattedMessage id="Pendaftaran Penguji" />,
+                            type: 'item',
+                            url: '/pendaftaranPenguji',
+                            
+                        },
+                        {
                             id: 'Pendaftaranfitnproper',
                             title: <FormattedMessage id="Pendaftaran Fit & Proper" />,
                             type: 'item',
