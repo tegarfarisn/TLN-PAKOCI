@@ -1,6 +1,6 @@
 import React from 'react';
 import Stack from '@mui/material/Stack';
-import {Card, CardContent, CardHeader, Grid, Typography, TextField} from '@material-ui/core';
+import {Card, CardContent, CardHeader, Grid, Typography, TextField, Table, TableContainer, TebleHead, TableRow, TableCell} from '@material-ui/core';
 import EventNoteOutlinedIcon from '@mui/icons-material/EventNoteOutlined';
 //import TableFit from '../forms/tables/TableFit';
 
@@ -9,8 +9,11 @@ const penilaianFitnProper = () => {
         <Grid container>
             <Grid item xs={12}>
                 <Card>
-                <CardHeader title={<Typography variant="h5">Input Nilai Peserta </Typography>} />
+                <CardHeader title={<Typography variant="h3">Input Nilai Peserta </Typography>} />
                 <CardContent>
+                <TableContainer>
+
+                </TableContainer>
                 <Grid container spacing={1} paddingBottom={3}>
                     <Grid item xs={3} md={2.2}>
                         <Typography variant="h5" paddingLeft={3} display='center' >
@@ -32,37 +35,224 @@ const penilaianFitnProper = () => {
                         </Stack> 
                     </Grid>
                     </CardContent>
-                    <Grid container spacing={1} paddingBottom={3}>
+                    <Grid container spacing={1} paddingBottom={4}>
                         <Grid item xs={3} md={2.2}>
-                        <Typography variant="h5" paddingLeft={3} display='center' >
-                        Enthusiasthic for Challenge
-                        </Typography>
+                            <Typography variant="h5" paddingLeft={3}  display='center' >
+                            Enthusiasthic for Challenge
+                            </Typography>
                         </Grid>
-                        <TextField
-                        id="fullWidth"
-                        label="efc"
-                        type="efc"
-                        autoComplete="current-password"
-                        value="{}"
-                        disabled
-                        />
-                    </Grid>
-                    <Grid container Spacing={10} paddingLeft={7} paddingRight= {10}>
-                        <Grid >
-                        <Typography variant="h5" paddingLeft={3} display='center' >
-                        Enthusiasthic for Challenge
-                        </Typography>
-            
-                        <TextField
-                        id="fullWidth"
-                        label="efc"
-                        type="efc"
-                        autoComplete="current-password"
-                        value="{}"
-                        disabled
-                        />
+                            <TextField
+                            id="fullWidth"
+                            label="Nilai"
+                            type="Nilai"
+                            autoComplete="current-password"
+                            value=""
+                            disabled
+                            />
+                        <Grid item xs={3} md={2.2}>
+                            <Typography variant="h5" paddingLeft={4} display='center' >
+                            Creative and Innovative 
+                            </Typography>
                         </Grid>
+                            <TextField
+                            id="fullWidth"
+                            label="Nilai"
+                            type="Nilai"
+                            autoComplete="current-password"
+                            value=""
+                            disabled
+                            />
                     </Grid>
+
+                    <Grid container spacing={1} paddingBottom={4}>
+                        <Grid item xs={3} md={2.2}>
+                            <Typography variant="h5" paddingLeft={3} paddingRight={3} display='center' >
+                            Building Business Partnership 
+                            </Typography>
+                        </Grid>
+                            <TextField
+                            id="fullWidth"
+                            label="Nilai"
+                            type="Nilai"
+                            autoComplete="current-password"
+                            value=""
+                            disabled
+                            />
+                        <Grid item xs={3} md={2.2}>
+                            <Typography variant="h5" paddingLeft={4} display='center' >
+                            Strategic Orientation 
+                            </Typography>
+                        </Grid>
+                            <TextField
+                            id="fullWidth"
+                            label="Nilai"
+                            type="Nilai"
+                            autoComplete="current-password"
+                            value=""
+                            disabled
+                            />
+                    </Grid>
+
+                    <Grid container spacing={1} paddingBottom={4}>
+                        <Grid item xs={3} md={2.2}>
+                            <Typography variant="h5" paddingLeft={3} display='center' >
+                            Customer Focus Oriented
+                            </Typography>
+                        </Grid>
+                            <TextField
+                            id="fullWidth"
+                            label="Nilai"
+                            type="Nilai"
+                            autoComplete="current-password"
+                            value=""
+                            disabled
+                            />
+                        <Grid item xs={3} md={2.2}>
+                            <Typography variant="h5" paddingLeft={4} display='center' >
+                           Driving Execution
+                            </Typography>
+                        </Grid>
+                            <TextField
+                            id="fullWidth"
+                            label="Nilai"
+                            type="Nilai"
+                            autoComplete="current-password"
+                            value=""
+                            disabled
+                            />
+                    </Grid>
+                    <Grid container spacing={1} paddingBottom={4}>
+                        <Grid item xs={3} md={2.2}>
+                            <Typography variant="h5" paddingLeft={3} display='center' >
+                            Visionary Leadership 
+                            </Typography>
+                        </Grid>
+                            <TextField
+                            id="fullWidth"
+                            label="Nilai"
+                            type="Nilai"
+                            autoComplete="current-password"
+                            value=""
+                            disabled
+                            />
+                        <Grid item xs={3} md={2.2}>
+                            <Typography variant="h5" paddingLeft={4} display='center' >
+                            Empowering/Developing Others  
+                            </Typography>
+                        </Grid>
+                            <TextField
+                            id="fullWidth"
+                            label="Nilai"
+                            type="Nilai"
+                            autoComplete="current-password"
+                            value=""
+                            disabled
+                            />
+                    </Grid>
+                    <Grid container spacing={1} paddingBottom={4}>
+                        <Grid item xs={3} md={2.2}>
+                            <Typography variant="h5" paddingLeft={3} display='center' >
+                            Aspek KEANDALAN SISTEM 
+                            </Typography>
+                        </Grid>
+                            <TextField
+                            id="fullWidth"
+                            label="Nilai"
+                            type="Nilai"
+                            autoComplete="current-password"
+                            value=""
+                            disabled
+                            />
+                        <Grid item xs={3} md={2.2}>
+                            <Typography variant="h5" paddingLeft={4} display='center' >
+                            Aspek KECEPATAN RECOVERY 
+                            </Typography>
+                        </Grid>
+                            <TextField
+                            id="fullWidth"
+                            label="Nilai"
+                            type="Nilai"
+                            autoComplete="current-password"
+                            value=""
+                            disabled
+                            />
+                    </Grid>
+                    <Grid container spacing={1} paddingBottom={4}>
+                        <Grid item xs={3} md={2.2}>
+                            <Typography variant="h5" paddingLeft={3} display='center' >
+                            Aspek MANAJEMEN ASET 
+                            </Typography>
+                        </Grid>
+                            <TextField
+                            id="fullWidth"
+                            label="Nilai"
+                            type="Nilai"
+                            autoComplete="current-password"
+                            value=""
+                            disabled
+                            />
+                        <Grid item xs={3} md={2.2}>
+                            <Typography variant="h5" paddingLeft={4} display='center' >
+                            Strategi dan breakthrough yang jelas dalam hal kontribusi KPI di Kontrak Manajemen 
+                            </Typography>
+                        </Grid>
+                            <TextField
+                            id="fullWidth"
+                            label="Nilai"
+                            type="Nilai"
+                            autoComplete="current-password"
+                            value=""
+                            disabled
+                            />
+                    </Grid>
+                    <Grid container spacing={1} paddingBottom={4}>
+                        <Grid item xs={3} md={2.2}>
+                            <Typography variant="h5" paddingLeft={3} display='center' >
+                            Internal Readness 
+                            </Typography>
+                        </Grid>
+                            <TextField
+                            id="fullWidth"
+                            label="Nilai"
+                            type="Nilai"
+                            autoComplete="current-password"
+                            value=""
+                            disabled
+                            />
+                        <Grid item xs={3} md={2.2}>
+                            <Typography variant="h5" paddingLeft={4} display='center' >
+                            External Readness 
+                            </Typography>
+                        </Grid>
+                            <TextField
+                            id="fullWidth"
+                            label="Nilai"
+                            type="Nilai"
+                            autoComplete="current-password"
+                            value=""
+                            disabled
+                            />
+                    </Grid>
+
+                    <Grid container spacing={1} paddingBottom={4}>
+                        <Grid item xs={3} md={2.2}>
+                            <Typography variant="h5" paddingLeft={3} display='center' >
+                            Cultural politics,economics and business change readness  
+                            </Typography>
+                        </Grid>
+                            <TextField
+                            id="fullWidth"
+                            label="Nilai"
+                            type="Nilai"
+                            autoComplete="current-password"
+                            value=""
+                            disabled
+                            />
+                    </Grid>
+                    
+                    
+                    
+                    
                     
                 </Card>
 

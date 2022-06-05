@@ -52,7 +52,7 @@ const penilaianPenguji = ()=> {
                             </TableHead>
                             <TableBody>
                             <TableRow>
-                                    <TableCell align="right">{nomor = nomor + 1}</TableCell>
+                                    <TableCell>{nomor = nomor + 1}</TableCell>
                                     <TableCell align="right"></TableCell>
                                     <TableCell align="right"></TableCell>
                                     <TableCell align="right"></TableCell>
